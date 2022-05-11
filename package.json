@@ -1,0 +1,19 @@
+{
+  "name": "aha_frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://outsider987: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@github.com/outsider987/Aha_Frontend.git"
+  },
+  "author": "Victor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/outsider987/Aha_Frontend/issues"
+  },
+  "homepage": "https://github.com/outsider987/Aha_Frontend#readme"
+}
