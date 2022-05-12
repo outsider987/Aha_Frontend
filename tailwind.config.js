@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     colors: {
       greyscale: '#181818',
+      navbar: '#1B1B1B',
     },
   },
   variants: {

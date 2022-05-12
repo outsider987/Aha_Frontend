@@ -1,5 +1,4 @@
 import React, {Suspense} from 'react';
-
 import {useRoutes} from 'react-router-dom';
 
 // import Home from '../views/Home';
@@ -17,18 +16,26 @@ const routes = [
   {
     path: '/',
     element: lazyLoad(React.lazy(() => import('~/views/Home'))),
+    icon: 'logo',
     children: [
       {
-        path: 'search',
-        element: lazyLoad(React.lazy(() => import('~/views/Home/Search'))),
+        path: 'main',
+        element: lazyLoad(React.lazy(() => import('~/views/Home/Main'))),
+        icon: 'template',
+        isShow: true,
       },
       {
         path: 'search',
         element: lazyLoad(React.lazy(() => import('~/views/Home/Search'))),
+        icon: 'template',
+        isShow: false,
       },
+
       {
-        path: 'search',
-        element: lazyLoad(React.lazy(() => import('~/views/Home/Search'))),
+        path: 'tags',
+        element: lazyLoad(React.lazy(() => import('~/views/Home/Tags'))),
+        icon: 'template',
+        isShow: true,
       },
     ],
   },
@@ -39,4 +46,4 @@ const MYRoutes = ()=> {
   return element;
 };
 
-export {MYRoutes};
+export {MYRoutes, routes};

@@ -1,12 +1,15 @@
 import React from 'react';
 import Wrapper from './Wrapper';
-import {Outlet} from 'react-router-dom';
+import {Outlet, Navigate, useLocation} from 'react-router-dom';
+import NavBar from './NavBar';
+
 
 const Home = () => {
+  const location= useLocation();
   return (
     <Wrapper>
-      {/* desktop */}
-      <Outlet />
+      <NavBar></NavBar>
+      {location.pathname!=='/'?<Outlet /> :<Navigate to={'/main'}/>}
 
     </Wrapper>
   );
