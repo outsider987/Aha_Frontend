@@ -1,28 +1,42 @@
-// router/index.js
-import React, { Suspense } from 'react';
+import React, {Suspense} from 'react';
 
-import { Outlet, useRoutes } from 'react-router-dom';
+import {useRoutes} from 'react-router-dom';
 
 // import Home from '../views/Home';
 
-const lazyLoad = (Comp: React.LazyExoticComponent<React.ComponentType<any>>) => {
-    return (
-        <Suspense fallback={<>加载中...</>}>
-            <Comp />
-        </Suspense>
-    );
+const lazyLoad = (Comp: React.LazyExoticComponent<React.ComponentType<any>>,
+) => {
+  return (
+    <Suspense fallback={<>加载中...</>}>
+      <Comp />
+    </Suspense>
+  );
 };
 
 const routes = [
-    {
-        path: '/',
-        element: lazyLoad(React.lazy(() => import('~/views/Home'))),
-    },
+  {
+    path: '/',
+    element: lazyLoad(React.lazy(() => import('~/views/Home'))),
+    children: [
+      {
+        path: 'search',
+        element: lazyLoad(React.lazy(() => import('~/views/Home/Search'))),
+      },
+      {
+        path: 'search',
+        element: lazyLoad(React.lazy(() => import('~/views/Home/Search'))),
+      },
+      {
+        path: 'search',
+        element: lazyLoad(React.lazy(() => import('~/views/Home/Search'))),
+      },
+    ],
+  },
 ];
 
-function MYRoutes() {
-    const element = useRoutes(routes);
-    return element;
-}
+const MYRoutes = ()=> {
+  const element = useRoutes(routes);
+  return element;
+};
 
-export { MYRoutes };
+export {MYRoutes};
