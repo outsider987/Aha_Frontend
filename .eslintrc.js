@@ -4,7 +4,15 @@ module.exports = {
     'es2021': true,
   },
   'extends': [
-    'google', 'eslint:recommended',
+    'google',
   ],
-
+  'parser': '@typescript-eslint/parser',
+  'parserOptions': {
+    'ecmaVersion': 'latest',
+  },
+  'plugins': [
+    '@typescript-eslint',
+  ],
+  'rules': {
+  },
 };
