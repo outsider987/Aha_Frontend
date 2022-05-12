@@ -3,7 +3,8 @@ import {useRoutes} from 'react-router-dom';
 
 // import Home from '../views/Home';
 
-const lazyLoad = (Comp: React.LazyExoticComponent<React.ComponentType<any>>,
+const lazyLoad = (
+    Comp: React.LazyExoticComponent<React.ComponentType<any>>,
 ) => {
   return (
     <Suspense fallback={<>加载中...</>}>
@@ -41,7 +42,7 @@ const routes = [
   },
 ];
 
-const MYRoutes = ()=> {
+const MYRoutes = () => {
   const element = useRoutes(routes);
   return element;
 };

@@ -6,7 +6,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "dev": "webpack serve",
-        "lint": "eslint --fix src/** "
+        "lint": "npx prettier  src/**/*.tsx --write && eslint --fix src/**  "
     },
     "repository": {
         "type": "git",
@@ -18,7 +18,9 @@
         "url": "https://github.com/outsider987/Aha_Frontend/issues"
     },
     "homepage": "https://github.com/outsider987/Aha_Frontend#readme",
-    "dependencies": {},
+    "dependencies": {
+        "prettier": "^2.6.2"
+    },
     "devDependencies": {
         "@types/react": "^18.0.9",
         "@types/react-dom": "^18.0.3",
