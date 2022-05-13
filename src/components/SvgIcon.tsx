@@ -78,7 +78,7 @@ const SvgICon: React.FC<Props> = (props: Props) => {
     }
   };
   return (
-    <span onClick={props.onClick} className={props.className + ' flex'}>
+    <span onClick={props.onClick} className={`w-fit ${props.className} `}>
       {renderSVG()}
       {props.children}
     </span>

@@ -9,7 +9,8 @@ const NavBar = () => {
   console.log(useLocation().pathname);
   return (
     <div
-      className="min-h-screen bg-navbar border-solid w-navbar_desktop_w
+      className="w-full min-h-screen bg-navbar border-solid
+      max-w-navbar_desktop_w
     border-r-1 border-black border-opacity-20"
     >
       {/* desktop */}

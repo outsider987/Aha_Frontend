@@ -8,7 +8,9 @@ const Home = () => {
   return (
     <Wrapper>
       <NavBar></NavBar>
-      {location.pathname !== '/' ? <Outlet /> : <Navigate to={'/main'} />}
+      <div className="AhaContainer">
+        {location.pathname !== '/' ? <Outlet /> : <Navigate to={'/main'} />}
+      </div>
     </Wrapper>
   );
 };

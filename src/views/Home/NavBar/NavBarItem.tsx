@@ -21,7 +21,11 @@ const NavBarItem: React.FC<Props> = ({
     return <></>;
   }
   return (
-    <Link to={path} className="flex flex-col justify-center relative">
+    <Link
+      to={path}
+      className="flex flex-col justify-center relative
+    items-center"
+    >
       <SvgICon
         name={iconName}
         className={`justify-center relative ${
@@ -30,7 +34,7 @@ const NavBarItem: React.FC<Props> = ({
       >
         {!isFocus && (
           <div
-            className="absolute -right-[3px] -top-[4.5px] w-[7px] h-[7px]
+            className="absolute  -right-[16.6%] -top-[20.83%] w-[25%] h-[25%]
         bg-navBarUnFocusBlue rounded-full"
           />
         )}
