@@ -6,15 +6,15 @@ const Main = () => {
   return (
     <>
       {/* desktop */}
-      <div>
+      <div className='flex flex-col'>
         <span className=" flex text-white text-2xl mb-[2.2vh]">Search</span>
         <Input
           type="text"
           value={searchValue}
           setInput={setSearchInput}
           placeholder={'Keyword'}
-          className="max-w-[50.34vw]"
         />
+        <div className='w-full h-[1px] bg-white bg-opacity-10 mt-[3.3vh]'/>
       </div>
     </>
   );

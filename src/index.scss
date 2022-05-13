@@ -131,6 +131,6 @@ code {
 }
 @layer components {
     .AhaContainer{
-        @apply ml-[9vw] mt-[6vh] mb-[9.6vh] w-full overflow-auto
+        @apply ml-[9vw] mt-[6vh] mb-[9.6vh] w-full overflow-auto max-w-[50.34vw]
     }
 }

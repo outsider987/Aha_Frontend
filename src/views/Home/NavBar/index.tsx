@@ -16,7 +16,7 @@ const NavBar = () => {
       {/* desktop */}
       <div
         className="hidden lg:flex flex-col px-6 py-9
-      space-y-[4.7vh]  "
+      space-y-[4.7vh] items-center"
       >
         <SvgICon name="logo" />
         {mainRoutes.children.map((item) => (
