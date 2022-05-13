@@ -2,9 +2,15 @@ module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    colors: {
-      greyscale: '#181818',
-      navbar: '#1B1B1B',
+    extend: {
+      colors: {
+        greyscale: '#181818',
+        navbar: '#1B1B1B',
+        navBarUnFocusBlue: '#00D1FF',
+      },
+      spacing: {
+        navbar_desktop_w: '5.7vw',
+      },
     },
   },
   variants: {
