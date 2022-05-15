@@ -4,6 +4,7 @@ import Slider from '~/components/Slider';
 
 const Main = () => {
   const [searchValue, setSearchInput] = useState('');
+  const [sliderValue, setSliderInput] = useState(3);
 
   const Row1 = () => {
     return (
@@ -34,7 +35,14 @@ const Main = () => {
           <span className=" font-bold text-5xl">30</span>
           <span>results</span>
         </div>
-        <Slider />
+        <Slider
+          value={sliderValue}
+          setInput={setSliderInput}
+          min={3}
+          max={50}
+          step={3}
+          className=" mt-6"
+        />
       </div>
     );
   };
