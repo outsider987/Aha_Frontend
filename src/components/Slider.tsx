@@ -18,7 +18,7 @@ const Slider: React.FC<Props> = ({
 }) => {
   const forwardStep = getStepValueBySliderPercentage(min, max);
   const [stepValue, setStep] = useState(forwardStep);
-  const [sliderValue, setSliderValue] = useState(value * 3);
+  const [sliderValue, setSliderValue] = useState(stepValue * 3 + min);
   const baseStepRange = Math.floor(max / 16.66);
   // make li array
   const countList = [min].concat(
@@ -35,7 +35,6 @@ const Slider: React.FC<Props> = ({
 
   useEffect(() => {
     setInput(convertSliderValueToValue(sliderValue, min));
-    getBackgroundSize();
   }, [sliderValue]);
   const getBackgroundSize = () => {
     return {
@@ -44,7 +43,6 @@ const Slider: React.FC<Props> = ({
       )}% `,
     };
   };
-
   return (
     <div className={`slide_group  ${className}`}>
       <input
