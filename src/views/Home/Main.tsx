@@ -1,10 +1,13 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Input from '~/components/Input';
 import Slider from '~/components/Slider';
 
 const Main = () => {
   const [searchValue, setSearchInput] = useState('');
   const [sliderValue, setSliderInput] = useState(3);
+  useEffect(() => {
+    console.log(sliderValue);
+  }, [sliderValue]);
 
   const Row1 = () => {
     return (
@@ -52,7 +55,7 @@ const Main = () => {
       {/* desktop */}
       <div className="hidden lg:block">
         <Row1 />
-        <Row2 />
+        {Row2()}
       </div>
     </>
   );

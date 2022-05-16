@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 interface Props {
   className?: string;
   max: number;
@@ -16,6 +16,9 @@ const Slider: React.FC<Props> = ({
   setInput,
   value,
 }) => {
+  const forwardStep = getStepValueBySliderPercentage(min, max);
+  const [stepValue, setStep] = useState(forwardStep);
+  const [sliderValue, setSliderValue] = useState(value * 3);
   const baseStepRange = Math.floor(max / 16.66);
   // make li array
   const countList = [min].concat(
@@ -25,34 +28,34 @@ const Slider: React.FC<Props> = ({
   );
   countList.push(max);
 
-  const forwardStep = getStepValueBySliderPercentage(
-      min,
-      max,
-  );
+  const onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.value);
+    setSliderValue(Number(e.target.value));
+  };
 
-  const [stepValue, setStep] = useState(forwardStep);
+  useEffect(() => {
+    setInput(convertSliderValueToValue(sliderValue, min));
+    getBackgroundSize();
+  }, [sliderValue]);
   const getBackgroundSize = () => {
     return {
       backgroundSize: `${Math.ceil(
-          convertValueToBackGroundSize(value, min, max),
+          convertValueToBackGroundSize(sliderValue, min, max),
       )}% `,
     };
   };
-  console.log(convertSliderStepValueToStepValue(forwardStep));
+
   return (
     <div className={`slide_group  ${className}`}>
       <input
-        value={value}
+        value={sliderValue}
         className="slider z-[99] "
         type="range"
         min={min}
         max={max}
         step={stepValue}
         style={getBackgroundSize()}
-        onChange={(e) => {
-          console.log(e.target.value);
-          setInput(Number(e.target.value));
-        }}
+        onChange={onInputChange}
       />
 
       <ul className="flex w-full relative  mt-4">
@@ -102,10 +105,7 @@ function convertValueToBackGroundSize(
  *@param {number} inputMax
  *@return {number}The sum of the two numbers.
  */
-function getStepValueBySliderPercentage(
-    inputMin: number,
-    inputMax: number,
-) {
+function getStepValueBySliderPercentage(inputMin: number, inputMax: number) {
   const range = inputMax - inputMin;
   const result = range * (18.75 / 100);
 
@@ -113,15 +113,13 @@ function getStepValueBySliderPercentage(
 }
 /**
  * convert value back
- *@param {number} stepValue inputValue
+ *@param {number} sliderValue
  *@param {number} inputMin
- *@param {number} inputMax
  *@return {number}The sum of the two numbers.
  */
-function convertSliderStepValueToStepValue(stepValue: number) {
-  const result = (stepValue * 18.32) / 100;
-
-  return Math.round(result);
+function convertSliderValueToValue(sliderValue: number, inputMin: number) {
+  const result = Math.round(sliderValue - inputMin) / 3;
+  return Math.round(result + inputMin);
 }
 
 export default Slider;
