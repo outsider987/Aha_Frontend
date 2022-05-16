@@ -4,7 +4,7 @@ import Slider from '~/components/Slider';
 
 const Main = () => {
   const [searchValue, setSearchInput] = useState('');
-  const [sliderValue, setSliderInput] = useState(3);
+  const [sliderValue, setSliderInput] = useState(15);
   useEffect(() => {
     console.log(sliderValue);
   }, [sliderValue]);
