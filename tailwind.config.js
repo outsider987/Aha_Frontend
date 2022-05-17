@@ -17,6 +17,9 @@ module.exports = {
       maxWidth: {
         navbar_desktop_w: '5.7vw',
       },
+      screens: {
+        follower: '1440px',
+      },
     },
   },
   variants: {

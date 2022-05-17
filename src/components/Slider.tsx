@@ -19,28 +19,29 @@ const Slider: React.FC<Props> = ({
   const space = 4;
   const valueRange = max - min;
   const forwardSliderStep = getStepValueBySliderPercentage(valueRange);
-  const baseStepRange = Math.floor(max / 16.66);
+  const baseStep = Math.floor(max / 16.66);
   const [sliderValue, setSliderValue] = useState(
-      convertValueToSliderValue(
-          value - min,
-          forwardSliderStep,
-          min,
-          baseStepRange,
-      ),
+      convertValueToSliderValue(value - min, forwardSliderStep, min, baseStep),
   );
 
   // make li array
   const countList = [min].concat(
-      Array.from({length: 4}, (_, i) => i + 1).map(
-          (item) => baseStepRange * item + min,
+      Array.from({length: space}, (_, i) => i + 1).map(
+          (item) => baseStep * item + min,
       ),
   );
   countList.push(max);
 
   const onSliderInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const inputValue = convertSliderValueToValue(Number(e.target.value), min);
-
-    if (inputValue > baseStepRange * (space + 1)) {
+    const inputValue = convertSliderValueToValue(
+        Number(e.target.value),
+        space,
+        baseStep,
+        min,
+        max,
+    );
+    const limit = baseStep * (space + 1) + min;
+    if (inputValue >= limit) {
       setSliderValue(max);
       e.target.step = `1`;
     } else {
@@ -51,7 +52,13 @@ const Slider: React.FC<Props> = ({
   };
 
   useEffect(() => {
-    const inputValue = convertSliderValueToValue(sliderValue, min);
+    const inputValue = convertSliderValueToValue(
+        sliderValue,
+        space,
+        baseStep,
+        min,
+        max,
+    );
     sliderValue === max ? setInput(max) : setInput(inputValue);
   }, [sliderValue]);
   const getBackgroundSize = () => {
@@ -79,13 +86,26 @@ const Slider: React.FC<Props> = ({
         {countList.map((item, index) => (
           <li
             key={index}
-            className={`flex  left-0 right-0  h-auto justify-start  w-1 pr-[18.31%] ${
-              index === countList.length - 2 && ' pr-[24.97%]'
-            } `}
+            className={`flex left-0 right-0 h-auto justify-start 
+             w-1 pr-[18.31%] 
+             ${index === countList.length - 2 && ' pr-[24.97%]'} `}
           >
             <span
-              className=" text-base flex   absolute
-             text-white text-opacity-50"
+              className={`text-base flex  absolute
+             text-white 
+             ${
+               convertSliderValueToValue(
+                   sliderValue,
+
+                   space,
+                   baseStep,
+                   min,
+                   max,
+               ) === item ?
+                 'text-opacity-100' :
+                 'text-opacity-50'
+          }
+             `}
             >
               {item}
             </span>
@@ -116,7 +136,7 @@ function convertValueToBackGroundSize(
 
 /**
  * slider value have to convert to real input value
- * every step range percentage  is 18.75% and last step is 24.97%
+ * every step range percentage  is 18.75% and last step is 25%
  * and every li is 18.31%
  *@param {number} valueRange
  *@return {number}
@@ -126,14 +146,29 @@ function getStepValueBySliderPercentage(valueRange: number) {
   return result - 0.05;
 }
 /** slider value to value
- * convert value back
+ * slider max value take 25% then forward part is 75% and
+   division space is every step
  *@param {number} sliderValue
- *@param {number} inputMin
+ *@param {number} space
+ *@param {number} baseStep
+  *@param {number} inputMin
+  *@param {number} inputMax
  *@return {number}
  */
-function convertSliderValueToValue(sliderValue: number, inputMin: number) {
-  const result = Math.round(sliderValue - inputMin) / 3;
-  return Math.round(result + inputMin);
+function convertSliderValueToValue(
+    sliderValue: number,
+    space: number,
+    baseStep: number,
+    inputMin: number,
+    inputMax: number,
+) {
+  const sliderRange = inputMax - inputMin;
+  const sliderForwardRange = sliderRange - sliderRange * 0.25;
+  const sliderForwardStep = sliderForwardRange / space;
+  const howManyStep = Math.round(sliderValue / sliderForwardStep);
+  const limit = sliderRange * (3 / 4) + inputMin;
+  if (sliderValue > limit) return inputMax;
+  else return howManyStep * baseStep + inputMin;
 }
 
 /** value to slider value
