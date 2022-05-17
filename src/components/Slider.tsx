@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 interface Props {
   className?: string;
   max: number;
@@ -19,7 +19,6 @@ const Slider: React.FC<Props> = ({
   const space = 4;
   const valueRange = max - min;
   const forwardSliderStep = getStepValueBySliderPercentage(valueRange);
-  const maxStepConstant = (max - min) / 4;
   const baseStepRange = Math.floor(max / 16.66);
   const [sliderValue, setSliderValue] = useState(
       convertValueToSliderValue(
@@ -29,7 +28,6 @@ const Slider: React.FC<Props> = ({
           baseStepRange,
       ),
   );
-  //   const [sliderValue, setSliderValue] = useState(forwardSliderStep * 4 + min);
 
   // make li array
   const countList = [min].concat(
@@ -44,16 +42,11 @@ const Slider: React.FC<Props> = ({
 
     if (inputValue > baseStepRange * (space + 1)) {
       setSliderValue(max);
-      e.target.step = `${maxStepConstant}`;
+      e.target.step = `${1}`;
     } else {
-      const value =
-        Number(e.target.step) === maxStepConstant &&
-        (space + 1) * baseStepRange !== inputValue ?
-          Number(e.target.value) + (maxStepConstant - forwardSliderStep) :
-          Number(e.target.value);
-      setSliderValue(value);
-      e.target.value = `${Number(e.target.value)}`;
       e.target.step = `${forwardSliderStep}`;
+      setSliderValue(Number(e.target.value));
+      e.target.value = `${Number(e.target.value)}`;
     }
   };
 
