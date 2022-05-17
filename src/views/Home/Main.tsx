@@ -35,7 +35,7 @@ const Main = () => {
           className="flex flex-row tracking-[0.15px]
         text-white space-x-[0.625rem] items-baseline"
         >
-          <span className=" font-bold text-5xl">30</span>
+          <span className=" font-bold text-5xl">{sliderValue}</span>
           <span>results</span>
         </div>
         <Slider
@@ -44,8 +44,9 @@ const Main = () => {
           min={3}
           max={50}
           step={3}
-          className=" mt-6"
+          className=" mt-6 mb-[2.125rem]"
         />
+        <div className="w-full h-[1px] bg-white bg-opacity-10 my-[3.3vh]" />
       </div>
     );
   };
@@ -54,7 +55,7 @@ const Main = () => {
     <>
       {/* desktop */}
       <div className="hidden lg:block">
-        <Row1 />
+        {Row1()}
         {Row2()}
       </div>
     </>

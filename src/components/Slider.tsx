@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 interface Props {
   className?: string;
   max: number;
@@ -42,7 +42,7 @@ const Slider: React.FC<Props> = ({
 
     if (inputValue > baseStepRange * (space + 1)) {
       setSliderValue(max);
-      e.target.step = `${1}`;
+      e.target.step = `1`;
     } else {
       e.target.step = `${forwardSliderStep}`;
       setSliderValue(Number(e.target.value));
@@ -52,8 +52,7 @@ const Slider: React.FC<Props> = ({
 
   useEffect(() => {
     const inputValue = convertSliderValueToValue(sliderValue, min);
-
-    setInput(inputValue);
+    sliderValue === max ? setInput(max) : setInput(inputValue);
   }, [sliderValue]);
   const getBackgroundSize = () => {
     return {
