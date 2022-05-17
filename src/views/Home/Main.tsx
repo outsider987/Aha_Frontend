@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import Button from '~/components/Button';
 import Input from '~/components/Input';
 import Slider from '~/components/Slider';
 
@@ -54,9 +55,13 @@ const Main = () => {
   return (
     <>
       {/* desktop */}
-      <div className="hidden lg:block">
-        {Row1()}
-        {Row2()}
+      <div className="hidden lg:flex flex-col w-full h-full justify-between">
+        <div className="w-full">
+          {Row1()}
+          {Row2()}
+        </div>
+
+        <Button className="w-[23.82vw]">SEARCH</Button>
       </div>
     </>
   );
