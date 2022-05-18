@@ -10,7 +10,7 @@ const NavBar = () => {
   return (
     <div
       className="w-full min-h-screen bg-navbar border-solid
-      max-w-navbar_desktop_w
+      max-w-navbar_desktop_w hidden lg:block
     border-r-1 border-black border-opacity-20"
     >
       {/* desktop */}

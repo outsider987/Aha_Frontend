@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <Wrapper>
       <NavBar></NavBar>
-      <div className="AhaContainer">
+      <div className="content_container">
         {location.pathname !== '/' ? <Outlet /> : <Navigate to={'/main'} />}
       </div>
     </Wrapper>
