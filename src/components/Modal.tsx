@@ -23,12 +23,7 @@ const Modal: React.FC<props> = ({toggle, children}) => {
       </div>
     );
   } else {
-    return (
-      <div
-        className=" hidden
-          "
-      ></div>
-    );
+    return <></>;
   }
 };
 export default Modal;

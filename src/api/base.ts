@@ -1,12 +1,5 @@
 import axios from 'axios';
 import {useGlobalStore} from '~/store/context/global';
-export interface ErrorCode {
-  data: any;
-  error: {
-    code: number;
-    content: string;
-  };
-}
 
 const api = (subPath: string = '') => {
   const {actions: globalActions} = useGlobalStore();
@@ -28,11 +21,7 @@ const api = (subPath: string = '') => {
   api.interceptors.response.use(
       (response) => {
         globalActions.setLoading(false);
-        const date: ErrorCode = response.data;
-        console.log(date.error.code);
-        if (date.error.code === -2) {
-          localStorage.removeItem('token');
-        }
+        const date = response.data;
 
         return response;
       },
