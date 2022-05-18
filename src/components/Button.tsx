@@ -31,5 +31,5 @@ const Button: React.FC<Props> = ({
     </button>
   );
 };
-Button.defaultProps = { isRounded: false, isWhite: true };
+Button.defaultProps = {isRounded: false, isWhite: true};
 export default Button;
