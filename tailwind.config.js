@@ -20,6 +20,9 @@ module.exports = {
       screens: {
         follower: '1440px',
       },
+      fontFamily: {
+        opensans: ['Open Sans', 'sans-serif'],
+      },
     },
   },
   variants: {

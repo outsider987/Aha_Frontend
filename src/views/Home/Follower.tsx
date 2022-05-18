@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
+import FollowerItem from '~/components/FollowerItem';
 import {Menu} from '~/util/enum/Enum_Followers';
+
 
 const Follower = () => {
   const menu = Object.values(Menu);
@@ -11,8 +13,8 @@ const Follower = () => {
     setmenuIndexState(index);
   };
 
-  const renderOption = () => {
-    const disableClass = ' text-[#929292] opacity-[0.87] border-greyscale';
+  const renderMenu = () => {
+    const disableClass = 'text-[#929292] opacity-[0.87] border-greyscale';
     return (
       <div className="flex flex-row w-full ">
         {menu.map((item, index) => (
@@ -32,13 +34,18 @@ const Follower = () => {
       </div>
     );
   };
+  const renderContent = ()=>{
+      return <div className=' my-8 mx-4'>
+          <FollowerItem/>
+      </div>
+  }
   return (
     <div
       className="hidden absolute w-[26.04vw] right-0  follower:flex
   bg-navbar min-h-screen flex-col"
     >
-      {renderOption()}
-      <div>content</div>
+      {renderMenu()}
+     {renderContent()}
     </div>
   );
 };
