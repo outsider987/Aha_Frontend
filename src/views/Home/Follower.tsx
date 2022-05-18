@@ -36,7 +36,7 @@ const Follower = () => {
   const renderContent = () => {
     return (
       <div className=" my-8 mx-4">
-        <FollowerItem isFollowing={false}/>
+        <FollowerItem isFollowing={false} />
       </div>
     );
   };
