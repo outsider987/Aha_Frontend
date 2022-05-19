@@ -2,12 +2,12 @@ import React, {useState} from 'react';
 import useFollowerApi from '~/api/follower';
 
 export interface FollowerDatas {
-  Items?: FollowerItem[];
+  Items?: InterFollowerItem[];
   PageCount?: number;
   currentPage?: number;
   itemCounts?: number;
 }
-export interface FollowerItem {
+export interface InterFollowerItem {
   id: number;
   name: string;
   username: string;
@@ -30,7 +30,7 @@ const initialState: FollowerDatas = {
 };
 
 const useStoreFollower = () => {
-  const [followerState, setFollowerState] =
+  const [stateFollower, setFollowerState] =
     useState<FollowerDatas>(initialState);
 
   //   useEffect(() => {
@@ -42,11 +42,10 @@ const useStoreFollower = () => {
   const getFollowerData = (page: number, pageSize: number) => {
     GET(page, pageSize).then((res) => {
       console.log(res);
-      const data = res.data as FollowerDatas;
+      const data = res.data as InterFollowerItem[];
       setFollowerState((prevProductState) => ({
         ...prevProductState,
-        Items: data.Items,
-        PageCount: data.PageCount,
+        Items: data,
       }));
     });
   };
@@ -66,7 +65,7 @@ const useStoreFollower = () => {
   //   };
 
   return {
-    followerState: followerState,
+    stateFollower,
     getFollowerData,
   };
 };

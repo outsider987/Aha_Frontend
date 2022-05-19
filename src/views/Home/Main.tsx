@@ -2,19 +2,13 @@ import React, {useEffect, useState} from 'react';
 import Button from '~/components/Button';
 import Input from '~/components/Input';
 import Slider from '~/components/Slider';
-import {useStoreFollower} from '~/store/StoreFollower';
 
 const Main = () => {
-  const {getFollowerData} = useStoreFollower();
-
   const [searchValue, setSearchInput] = useState('');
   const [sliderValue, setSliderInput] = useState(15);
   useEffect(() => {
     console.log(sliderValue);
   }, [sliderValue]);
-  useEffect(() => {
-    getFollowerData(1, 10);
-  }, []);
 
   const Row1 = () => {
     return (

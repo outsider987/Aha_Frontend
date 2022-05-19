@@ -1,8 +1,14 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import FollowerItem from '~/components/FollowerItem';
+import {useStoreFollower} from '~/store/StoreFollower';
 import {Menu} from '~/util/enum/Enum_Followers';
+import {InterFollowerItem} from '~/store/StoreFollower';
 
 const Follower = () => {
+  const {stateFollower, getFollowerData} = useStoreFollower();
+  useEffect(() => {
+    getFollowerData(1, 20);
+  }, []);
   const menu = Object.values(Menu);
 
   const [menuIndexState, setmenuIndexState] = useState(
@@ -34,16 +40,33 @@ const Follower = () => {
     );
   };
   const renderContent = () => {
+    const filterFloower = (item: InterFollowerItem) => {
+      if (menu[menuIndexState] === Menu.Followers) return true;
+      if (
+        menu[menuIndexState] === Menu.Following &&
+        item.isFollowing === true
+      ) {
+        return true;
+      }
+    };
+
     return (
-      <div className=" my-8 mx-4">
-        <FollowerItem isFollowing={false} />
+      <div className=" mt-8 mx-4 space-y-4 max-h-screen overflow-auto">
+        {stateFollower.Items?.filter(filterFloower).map((item) => (
+          <FollowerItem
+            name={item.name}
+            username={item.username}
+            avater={item.avater}
+            isFollowing={item.isFollowing}
+          />
+        ))}
       </div>
     );
   };
   return (
     <div
       className="hidden absolute w-[26.04vw] right-0  follower:flex
-  bg-navbar min-h-screen flex-col"
+  bg-navbar min-h-screen flex-col max-h-screen"
     >
       {renderMenu()}
       {renderContent()}

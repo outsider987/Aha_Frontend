@@ -21,7 +21,6 @@ const api = (subPath: string = '') => {
   api.interceptors.response.use(
       (response) => {
         globalActions.setLoading(false);
-        const date = response.data;
 
         return response;
       },
