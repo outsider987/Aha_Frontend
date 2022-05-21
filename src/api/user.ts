@@ -1,4 +1,3 @@
-import {SearchItem} from './../store/context/SearchContext/index';
 import api from './base';
 
 const subPath = 'users';

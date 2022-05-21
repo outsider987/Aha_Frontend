@@ -14,6 +14,9 @@ export interface SearchItem {
 
 export interface SearchState {
   searchItem: SearchItem[];
+  page:number,
+  pageSize:number,
+  keyword:string,
 }
 interface InterSearchContext {
   state: SearchState;
@@ -33,7 +36,31 @@ const contextDefaultValues: InterSearchContext = {
         avater: 'avater',
         isFollowing: false,
       },
+      {
+        id: 1,
+        name: 'name',
+        username: 'username',
+        avater: 'avater',
+        isFollowing: false,
+      },
+      {
+        id: 2,
+        name: 'name',
+        username: 'username',
+        avater: 'avater',
+        isFollowing: false,
+      },
+      {
+        id: 3,
+        name: 'name',
+        username: 'username',
+        avater: 'avater',
+        isFollowing: false,
+      },
     ],
+    page: 1,
+    pageSize: 9,
+    keyword: '',
   },
   actions: {
     getSearchResult: (page: number, pageSize: number, keyword: string) => {},

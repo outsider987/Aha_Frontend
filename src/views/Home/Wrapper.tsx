@@ -6,7 +6,7 @@ type Props = {
 };
 const Wrapper: React.FC<Props> = ({children}) => {
   return (
-    <div className="w-full bg-greyscale min-h-screen flex">
+    <div className="w-full bg-greyscale min-h-screen flex max-h-screen">
       {children}
       <Follower />
     </div>

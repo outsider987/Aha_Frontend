@@ -6,9 +6,9 @@ import Slider from '~/components/Slider';
 import {useContextSearch} from '~/store/context/SearchContext';
 
 const Main = () => {
-  const {actions: userAction} = useContextSearch();
-  const [searchValue, setSearchInput] = useState('');
-  const [sliderValue, setSliderInput] = useState(15);
+  const {actions: userAction,state:stateSearch} = useContextSearch();
+  const [searchValue, setSearchInput] = useState(stateSearch.keyword);
+  const [sliderValue, setSliderInput] = useState(stateSearch.pageSize);
   const navigate = useNavigate();
 
   const onSearchClick = () => {
