@@ -22,7 +22,7 @@ interface InterSearchContext {
   state: SearchState;
   actions: {
     getSearchResult: (page: number, pageSize: number, keyword: string) => void;
-    setShowNavBar: (b: boolean) => void;
+    setStateSearch: (p: SearchState) => void;
   };
 }
 
@@ -36,27 +36,6 @@ const contextDefaultValues: InterSearchContext = {
         avater: 'avater',
         isFollowing: false,
       },
-      {
-        id: 1,
-        name: 'name',
-        username: 'username',
-        avater: 'avater',
-        isFollowing: false,
-      },
-      {
-        id: 2,
-        name: 'name',
-        username: 'username',
-        avater: 'avater',
-        isFollowing: false,
-      },
-      {
-        id: 3,
-        name: 'name',
-        username: 'username',
-        avater: 'avater',
-        isFollowing: false,
-      },
     ],
     page: 1,
     pageSize: 9,
@@ -64,7 +43,7 @@ const contextDefaultValues: InterSearchContext = {
   },
   actions: {
     getSearchResult: (page: number, pageSize: number, keyword: string) => {},
-    setShowNavBar: (t: boolean) => {},
+    setStateSearch: (p: SearchState) => {},
   },
 };
 
@@ -93,18 +72,16 @@ const SearchProvider: React.FC<Props> = ({children}) => {
     });
   };
 
-  const setShowNavBar = (newState: boolean) => {
+  const setStateSearch = (currentState:SearchState) => {
     setState({
       ...stateSearch,
-      state: {
-        ...stateSearch.state,
-      },
+      state: currentState,
     });
   };
 
   return (
     <SearchContext.Provider
-      value={{...stateSearch, actions: {getSearchResult, setShowNavBar}}}
+      value={{...stateSearch, actions: {getSearchResult, setStateSearch}}}
     >
       {children}
     </SearchContext.Provider>
