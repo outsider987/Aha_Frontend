@@ -3,8 +3,11 @@ import FollowerItem from '~/components/FollowerItem';
 import {useStoreFollower} from '~/store/StoreFollower';
 import {Menu} from '~/util/enum/Enum_Followers';
 import {InterFollowerItem} from '~/store/StoreFollower';
+import {useLocation} from 'react-router-dom';
+
 
 const Follower = () => {
+  const location = useLocation();
   const {stateFollower, getFollowerData} = useStoreFollower();
   useEffect(() => {
     getFollowerData(1, 20);
@@ -17,6 +20,7 @@ const Follower = () => {
   const onMenuClick = (index: number) => {
     setmenuIndexState(index);
   };
+
 
   const renderMenu = () => {
     const disableClass = 'text-[#929292] opacity-[0.87] border-greyscale';
@@ -51,7 +55,7 @@ const Follower = () => {
     };
 
     return (
-      <div className=" mt-8 mx-4 space-y-4 max-h-screen overflow-auto">
+      <div className={`mt-8 mx-4 space-y-4 max-h-screen overflow-auto `}>
         {stateFollower.Items?.filter(filterFloower).map((item) => (
           <FollowerItem
             key={item.id}
@@ -64,10 +68,11 @@ const Follower = () => {
       </div>
     );
   };
+  const hiddenClass = location.pathname === '/tags'? 'hidden' : 'flex';
   return (
     <div
-      className="hidden absolute w-[26.04vw] right-0  follower:flex
-  bg-navbar min-h-screen flex-col max-h-screen"
+      className={`hidden absolute w-[26.04vw] right-0  follower:${hiddenClass}
+  bg-navbar min-h-screen flex-col max-h-screen`}
     >
       {renderMenu()}
       {renderContent()}
