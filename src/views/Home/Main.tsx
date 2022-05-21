@@ -17,8 +17,11 @@ const Main = () => {
   };
 
   useEffect(() => {
-    userAction.setStateSearch({...stateSearch, pageSize: sliderValue});
-  }, [sliderValue]);
+    userAction.setStateSearch({
+      ...stateSearch,
+      pageSize: sliderValue, keyword: searchValue,
+    });
+  }, [sliderValue, searchValue]);
 
   const Row1 = () => {
     return (
