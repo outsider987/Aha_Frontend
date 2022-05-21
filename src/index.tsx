@@ -3,6 +3,7 @@ import {createRoot} from 'react-dom/client';
 import {BrowserRouter} from 'react-router-dom';
 import {MYRoutes} from './router';
 import StoreGlobalProvider from '~/store/context/global';
+import SearchProvider from '~/store/context/SearchContext';
 import IndexWrapper from './IndexWrapper';
 
 import './index.scss';
@@ -14,11 +15,13 @@ const root = createRoot(rootElement);
 root.render(
     <React.StrictMode>
       <StoreGlobalProvider>
-        <BrowserRouter>
-          <IndexWrapper>
-            <MYRoutes />
-          </IndexWrapper>
-        </BrowserRouter>
+        <SearchProvider>
+          <BrowserRouter>
+            <IndexWrapper>
+              <MYRoutes />
+            </IndexWrapper>
+          </BrowserRouter>
+        </SearchProvider>
       </StoreGlobalProvider>
     </React.StrictMode>,
 );

@@ -1,8 +1,8 @@
 import axios from 'axios';
-import {useGlobalStore} from '~/store/context/global';
+import {useContextGlobal} from '~/store/context/global';
 
 const api = (subPath: string = '') => {
-  const {actions: globalActions} = useGlobalStore();
+  const {actions: globalActions} = useContextGlobal();
   const api = axios.create({
     baseURL: `https://avl-frontend-exam.herokuapp.com/api/${subPath}`,
     headers: {'Content-Type': 'application/json'},

@@ -1,11 +1,21 @@
 import React, {useEffect, useState} from 'react';
+import {useNavigate} from 'react-router-dom';
 import Button from '~/components/Button';
 import Input from '~/components/Input';
 import Slider from '~/components/Slider';
+import {useContextSearch} from '~/store/context/SearchContext';
 
 const Main = () => {
+  const {actions: userAction} = useContextSearch();
   const [searchValue, setSearchInput] = useState('');
   const [sliderValue, setSliderInput] = useState(15);
+  const navigate = useNavigate();
+
+  const onSearchClick = () => {
+    userAction.getSearchResult(1, sliderValue, searchValue);
+    navigate('/search');
+  };
+
   useEffect(() => {
     console.log(sliderValue);
   }, [sliderValue]);
@@ -61,7 +71,9 @@ const Main = () => {
           {Row2()}
         </div>
 
-        <Button className="w-[23.82vw]">SEARCH</Button>
+        <Button onClick={onSearchClick} className="w-[23.82vw]">
+          SEARCH
+        </Button>
       </div>
     </>
   );

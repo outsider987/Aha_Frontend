@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import useFollowerApi from '~/api/follower';
+import useUserApi from '~/api/user';
 
 export interface FollowerDatas {
   Items?: InterFollowerItem[];
@@ -37,11 +37,10 @@ const useStoreFollower = () => {
   //     getFollowerData(followerState.startTime, followerState.endTime);
   //   }, [followerState.currentPage]);
 
-  const {GET} = useFollowerApi();
+  const {GET_FOLLOWER} = useUserApi();
 
   const getFollowerData = (page: number, pageSize: number) => {
-    GET(page, pageSize).then((res) => {
-      console.log(res);
+    GET_FOLLOWER(page, pageSize).then((res) => {
       const data = res.data as InterFollowerItem[];
       setFollowerState((prevProductState) => ({
         ...prevProductState,

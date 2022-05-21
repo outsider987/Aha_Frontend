@@ -54,6 +54,7 @@ const Follower = () => {
       <div className=" mt-8 mx-4 space-y-4 max-h-screen overflow-auto">
         {stateFollower.Items?.filter(filterFloower).map((item) => (
           <FollowerItem
+            key={item.id}
             name={item.name}
             username={item.username}
             avater={item.avater}

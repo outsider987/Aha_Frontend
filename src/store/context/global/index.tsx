@@ -27,7 +27,7 @@ const contextDefaultValues: GlobalContext = {
 };
 
 export const GlobalContext = createContext<GlobalContext>(contextDefaultValues);
-export const useGlobalStore = () => useContext(GlobalContext);
+export const useContextGlobal = () => useContext(GlobalContext);
 const GlobalProvider: React.FC<Props> = ({children}) => {
   const [global, setState] = useState(contextDefaultValues);
 
@@ -51,7 +51,6 @@ const GlobalProvider: React.FC<Props> = ({children}) => {
     });
   };
 
-  GlobalContext.Provider;
   return (
     <GlobalContext.Provider
       value={{...global, actions: {setLoading, setShowNavBar}}}

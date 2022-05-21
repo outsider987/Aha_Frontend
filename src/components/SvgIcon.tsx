@@ -30,8 +30,8 @@ const SvgICon: React.FC<Props> = (props: Props) => {
                 y2="7.50227"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#FFD25F" />
-                <stop offset="1" stop-color="#FF5C01" />
+                <stop stopColor="#FFD25F" />
+                <stop offset="1" stopColor="#FF5C01" />
               </linearGradient>
             </defs>
           </svg>
