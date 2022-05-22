@@ -10,8 +10,8 @@
     
   }
   .content_tags_container {
-    @apply md:m-auto overflow-auto;
-    @apply lg:mt-[6vh] lg:mb-[9.6vh] w-full  ;
+    @apply md:m-auto ;
+    @apply lg:pt-[6vh] w-full max-h-screen overflow-auto;
     
   }
   .slide_group {
