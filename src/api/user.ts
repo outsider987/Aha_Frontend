@@ -15,6 +15,16 @@ const useUserApi = () => {
 
     return await resp.data;
   };
+  const GET_FOLLOWING = async (page: number, pageSize: number) => {
+    const resp = await followerApi.get('friends', {
+      params: {
+        page: page,
+        pageSize: pageSize,
+      },
+    });
+
+    return await resp.data;
+  };
   const GET_SEARCH = async (
       page: number,
       pageSize: number,
@@ -30,7 +40,7 @@ const useUserApi = () => {
     return await resp.data;
   };
 
-  return {GET_FOLLOWER, GET_SEARCH};
+  return {GET_FOLLOWER, GET_SEARCH, GET_FOLLOWING};
 };
 
 export default useUserApi;

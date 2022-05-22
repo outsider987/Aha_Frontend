@@ -33,10 +33,19 @@ const useStoreFollower = () => {
   const [stateFollower, setFollowerState] =
     useState<FollowerDatas>(initialState);
 
-  const {GET_FOLLOWER} = useUserApi();
+  const {GET_FOLLOWER, GET_FOLLOWING} = useUserApi();
 
   const getFollowerData = (page: number, pageSize: number) => {
     GET_FOLLOWER(page, pageSize).then((res) => {
+      const data = res.data as InterFollowerItem[];
+      setFollowerState((prevProductState) => ({
+        ...prevProductState,
+        Items: data,
+      }));
+    });
+  };
+  const getFollowingData = (page: number, pageSize: number) => {
+    GET_FOLLOWING(page, pageSize).then((res) => {
       const data = res.data as InterFollowerItem[];
       setFollowerState((prevProductState) => ({
         ...prevProductState,
@@ -48,6 +57,7 @@ const useStoreFollower = () => {
   return {
     stateFollower,
     getFollowerData,
+    getFollowingData,
   };
 };
 
