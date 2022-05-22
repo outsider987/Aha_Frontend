@@ -16,7 +16,7 @@ const Search = () => {
   }, []);
   return (
     <>
-      <div className=" m-auto max-w-[58.75vw]">
+      <div className=" m-auto max-w-[58.75vw] min-h-screen">
         <div className="relative mb-[2.66vh]">
           <SvgICon
             onClick={onBack}

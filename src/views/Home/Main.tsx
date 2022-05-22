@@ -70,7 +70,7 @@ const Main = () => {
         <Slider
           value={sliderValue}
           setInput={setSliderInput}
-          min={0}
+          min={3}
           max={50}
           step={3}
           className=" mt-6 mb-[2.125rem]"
