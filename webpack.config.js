@@ -29,7 +29,7 @@ module.exports = {
       },
 
       {
-        test: /\.(png|jpg|jpeg|gif)$/i,
+        test: /\.(png|jpg|jpeg|gif|svg)$/i,
         type: 'asset/resource',
       },
 
@@ -66,7 +66,7 @@ module.exports = {
     //     "openAnalyzer": false,analyzerMode: 'static'
     // }),
     new HtmlWebpackPlugin({
-      test: /\.(html|png)$/,
+      test: /\.(html|png|svg)$/,
       template: path.resolve(__dirname, 'src', 'public', 'index.html'),
       filename: 'index.html',
     }),

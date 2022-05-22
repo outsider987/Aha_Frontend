@@ -38,6 +38,12 @@
   }
 }
 
+.navbar_mobile{
+    background: rgba(24, 24, 24, 0.2);
+box-shadow: inset 0px 0.5px 0px rgba(0, 0, 0, 0.8);
+backdrop-filter: blur(54.3656px);
+}
+
 .modal-mount {
   animation: mount 0.4s linear;
 }

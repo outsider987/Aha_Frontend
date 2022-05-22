@@ -18,7 +18,7 @@ const TagItem: React.FC<Props> = ({name, count}) => {
         bottom-[1.55vh] rounded-lg border-white absolute font-bold text-white
         leading-[150%] truncate max-w-[13.88vh]"
         >
-            {name}
+          {name}
         </div>
       </div>
       <h1
