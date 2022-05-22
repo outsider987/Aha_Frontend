@@ -9,6 +9,11 @@
     @apply lg:ml-[9vw] lg:mt-[6vh] lg:mb-[9.6vh] w-full  lg:max-w-[50.34vw];
     
   }
+  .content_tags_container {
+    @apply md:m-auto overflow-auto;
+    @apply lg:mt-[6vh] lg:mb-[9.6vh] w-full  ;
+    
+  }
   .slide_group {
     input[type='range'] {
       @apply w-full  appearance-none  h-2 pr-[-8px]  relative;
@@ -60,13 +65,13 @@
     -webkit-border-radius: 10px;
     border-radius: 10px;
     margin: 0px 0px 5px 0;
-    background: rgba(217, 217, 217, 0.3);
+    background: transparent;
     border-radius: 10px;
     // padding-right: 6.61px;
 }
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
     border-radius: 4px;
-    background: white;
+    background: rgba(255, 255, 255, 0.2);
     background-clip: padding-box;
 }

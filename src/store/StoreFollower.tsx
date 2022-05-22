@@ -33,10 +33,6 @@ const useStoreFollower = () => {
   const [stateFollower, setFollowerState] =
     useState<FollowerDatas>(initialState);
 
-  //   useEffect(() => {
-  //     getFollowerData(followerState.startTime, followerState.endTime);
-  //   }, [followerState.currentPage]);
-
   const {GET_FOLLOWER} = useUserApi();
 
   const getFollowerData = (page: number, pageSize: number) => {
@@ -48,20 +44,6 @@ const useStoreFollower = () => {
       }));
     });
   };
-  //   const setCurrentPage = (currentPage: number) => {
-  //     setFollowerState((prevProductState) => ({
-  //       ...prevProductState,
-  //       currentPage: currentPage,
-  //     }));
-  //   };
-  //   const patchProductData = async (
-  //       Id: number,
-  //       received: number,
-  //       scrap: number,
-  //   ) => {
-  //     await PATCH(Id, received, scrap);
-  //     await getFollowerData(followerState.startTime, followerState.endTime);
-  //   };
 
   return {
     stateFollower,

@@ -5,7 +5,6 @@ import {Menu} from '~/util/enum/Enum_Followers';
 import {InterFollowerItem} from '~/store/StoreFollower';
 import {useLocation} from 'react-router-dom';
 
-
 const Follower = () => {
   const location = useLocation();
   const {stateFollower, getFollowerData} = useStoreFollower();
@@ -20,7 +19,6 @@ const Follower = () => {
   const onMenuClick = (index: number) => {
     setmenuIndexState(index);
   };
-
 
   const renderMenu = () => {
     const disableClass = 'text-[#929292] opacity-[0.87] border-greyscale';
@@ -68,10 +66,11 @@ const Follower = () => {
       </div>
     );
   };
-  const hiddenClass = location.pathname === '/tags'? 'hidden' : 'flex';
+  const hiddenClass =
+    location.pathname === '/tags' ? ' follower:hidden' : ' follower:flex';
   return (
     <div
-      className={`hidden absolute w-[26.04vw] right-0  follower:${hiddenClass}
+      className={`hidden absolute w-[26.04vw] right-0 ${hiddenClass}
   bg-navbar min-h-screen flex-col max-h-screen`}
     >
       {renderMenu()}

@@ -88,10 +88,20 @@ const SvgICon: React.FC<Props> = (props: Props) => {
           </div>
         );
       case 'arrow':
-        return <svg width="14" height="22" viewBox="0 0 14 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M13.2702 2.10349L11.3333 0.166626L0.5 11L11.3333 21.8333L13.2702 19.8964L4.37374 11L13.2702 2.10349Z" fill="currentColor"/>
-        </svg>;
-
+        return (
+          <svg
+            width="14"
+            height="22"
+            viewBox="0 0 14 22"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M13.2702 2.10349L11.3333 0.166626L0.5 11L11.3333 21.8333L13.2702 19.8964L4.37374 11L13.2702 2.10349Z"
+              fill="currentColor"
+            />
+          </svg>
+        );
 
       default:
         break;

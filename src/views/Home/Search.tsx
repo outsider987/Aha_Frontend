@@ -31,9 +31,13 @@ const Search = () => {
           className=" text-3xl text-white
          leading-[150%] tracking-[0.25px] space-y-6 mb-[2.26vh] relative"
         >
-          <SvgICon onClick={onBack} name='arrow' className="absolute flex -left-8
+          <SvgICon
+            onClick={onBack}
+            name="arrow"
+            className="absolute flex -left-8
             top-0 bottom-0 cursor-pointer
-            items-center text-white"/>
+            items-center text-white"
+          />
           <span>Results</span>
         </div>
         <div

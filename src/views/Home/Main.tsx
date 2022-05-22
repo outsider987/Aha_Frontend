@@ -19,7 +19,8 @@ const Main = () => {
   useEffect(() => {
     userAction.setStateSearch({
       ...stateSearch,
-      pageSize: sliderValue, keyword: searchValue,
+      pageSize: sliderValue,
+      keyword: searchValue,
     });
   }, [sliderValue, searchValue]);
 

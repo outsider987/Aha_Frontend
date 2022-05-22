@@ -2,10 +2,8 @@ import React from 'react';
 import {createRoot} from 'react-dom/client';
 import {BrowserRouter} from 'react-router-dom';
 import {MYRoutes} from './router';
-import StoreGlobalProvider from '~/store/context/global';
-import SearchProvider from '~/store/context/SearchContext';
 import IndexWrapper from './IndexWrapper';
-
+import ContextProvider from './store/context';
 import './index.scss';
 import './reset.scss';
 
@@ -14,14 +12,12 @@ const root = createRoot(rootElement);
 
 root.render(
     <React.StrictMode>
-      <StoreGlobalProvider>
-        <SearchProvider>
-          <BrowserRouter>
-            <IndexWrapper>
-              <MYRoutes />
-            </IndexWrapper>
-          </BrowserRouter>
-        </SearchProvider>
-      </StoreGlobalProvider>
+      <ContextProvider>
+        <BrowserRouter>
+          <IndexWrapper>
+            <MYRoutes />
+          </IndexWrapper>
+        </BrowserRouter>
+      </ContextProvider>
     </React.StrictMode>,
 );

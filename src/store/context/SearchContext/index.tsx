@@ -14,9 +14,9 @@ export interface SearchItem {
 
 export interface SearchState {
   searchItem: SearchItem[];
-  page:number,
-  pageSize:number,
-  keyword:string,
+  page: number;
+  pageSize: number;
+  keyword: string;
 }
 interface InterSearchContext {
   state: SearchState;
@@ -72,7 +72,7 @@ const SearchProvider: React.FC<Props> = ({children}) => {
     });
   };
 
-  const setStateSearch = (currentState:SearchState) => {
+  const setStateSearch = (currentState: SearchState) => {
     setState({
       ...stateSearch,
       state: currentState,
