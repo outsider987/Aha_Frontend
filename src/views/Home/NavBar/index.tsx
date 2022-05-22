@@ -6,7 +6,6 @@ import NavBarItem from './NavBarItem';
 
 const NavBar = () => {
   const mainRoutes = routes[0];
-  console.log(useLocation().pathname);
   return (
     <div
       className="w-full min-h-screen bg-navbar border-solid
@@ -26,7 +25,7 @@ const NavBar = () => {
             iconName={item.icon}
             path={item.path}
             text={item.text}
-            isFocus={useLocation().pathname === `/${item.path}`}
+            isFocus={useLocation().pathname === `${item.path}`}
           />
         ))}
       </div>

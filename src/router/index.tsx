@@ -20,14 +20,14 @@ const routes = [
     icon: 'logo',
     children: [
       {
-        path: 'main',
+        path: '/main',
         element: lazyLoad(React.lazy(() => import('~/views/Home/Main'))),
         icon: 'template',
         isShow: true,
         text: 'Home',
       },
       {
-        path: 'search',
+        path: '/search',
         element: lazyLoad(React.lazy(() => import('~/views/Home/Search'))),
         icon: 'template',
         isShow: false,
@@ -35,7 +35,7 @@ const routes = [
       },
 
       {
-        path: 'tags',
+        path: '/tags',
         element: lazyLoad(React.lazy(() => import('~/views/Home/Tags'))),
         icon: 'template',
         isShow: true,

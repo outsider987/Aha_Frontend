@@ -4,6 +4,9 @@ import Button from '~/components/Button';
 import Input from '~/components/Input';
 import Slider from '~/components/Slider';
 import {useContextSearch} from '~/store/context/SearchContext';
+import {routes} from '~/router';
+import NavBarItem from './NavBar/NavBarItem';
+import {useLocation} from 'react-router-dom';
 import SvgICon from '~/components/SvgIcon';
 
 const Main = () => {
@@ -99,6 +102,7 @@ const Main = () => {
   };
 
   const renderMobile = () => {
+    const mainRoutes = routes[0];
     return (
       <div
         className="lg:hidden flex h-screen max-h-screen flex-col
@@ -129,8 +133,16 @@ const Main = () => {
           className="min-h-[8.12vh] navbar_mobile justify-center flex
          flex-row items-center space-x-[54.24px]"
         >
-          <SvgICon name="template" className="text-white" />
-          <SvgICon name="template" className="text-white" />
+          {mainRoutes.children.map((item) => (
+            <NavBarItem
+              key={item.path}
+              isShow={item.isShow}
+              iconName={item.icon}
+              path={item.path}
+              text={item.text}
+              isFocus={useLocation().pathname === `${item.path}`}
+            />
+          ))}
         </div>
       </div>
     );
