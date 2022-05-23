@@ -11,30 +11,36 @@ const Search = () => {
   const onBack = () => {
     navigate(-1);
   };
+  //
   useEffect(() => {
     tagsAction.getTags();
   }, []);
   return (
     <>
-      <div className=" m-auto max-w-[58.75vw] min-h-screen">
-        <div className="relative mb-[2.66vh]">
-          <SvgICon
-            onClick={onBack}
-            name="arrow"
-            className="absolute flex -left-8
+      <div className=" flex flex-col w-full">
+        <div className="mr-[21px] mb-6">
+          <div className="relative m-auto max-w-[58.75vw] w-full">
+            <SvgICon
+              onClick={onBack}
+              name="arrow"
+              className="absolute flex -left-8
             top-0 bottom-0 cursor-pointer
             items-center text-white"
-          />
-          <span className="text-3xl tracking-[0.25px] text-white">Tags</span>
+            />
+            <span className="text-3xl tracking-[0.25px] text-white">Tags</span>
+          </div>
         </div>
-        <div className="grid grid-cols-5 gap-y-9">
-          {stateTag.tagItem.map((item) => (
-            <TagItem
-              key={item.id}
-              name={item.name}
-              count={item.count}
-            ></TagItem>
-          ))}
+
+        <div className=" max-h-[83.44vh] overflow-auto mr-[21px]">
+          <div className="grid grid-cols-5 gap-y-9 max-w-[58.75vw] m-auto items-start min ">
+            {stateTag.tagItem.map((item) => (
+              <TagItem
+                key={item.id}
+                name={item.name}
+                count={item.count}
+              ></TagItem>
+            ))}
+          </div>
         </div>
       </div>
     </>

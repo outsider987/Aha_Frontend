@@ -13,9 +13,7 @@ const SearchItem: React.FC<Props> = ({name, username, avater}) => {
   const imgClass = 'lg:max-w-[15.20vw] lg:max-h-[10.13vw] lg:h-[9.13vw]';
   const imgMobileClass = 'h-[27.42vh]';
   return (
-    <div
-      className={`flex flex-col w-full ${containerClass}`}
-    >
+    <div className={`flex flex-col w-full ${containerClass}`}>
       <img
         className={`w-full h-full ${imgClass} ${imgMobileClass}`}
         src={avater}

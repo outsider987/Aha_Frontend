@@ -81,7 +81,9 @@ const Search = () => {
           className="flex flex-col justify-between
          overflow-auto max-h-[81.77vh] "
         >
-          <span className=" text-2xl text-white leading-[150%] mb-6">Results</span>
+          <span className=" text-2xl text-white leading-[150%] mb-6">
+            Results
+          </span>
           <div className="mr-[2.13vw] space-y-[4.92vh]">
             {searchState.searchItem.map((item) => (
               <SearchItem
