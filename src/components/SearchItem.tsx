@@ -9,14 +9,22 @@ interface Props {
 }
 
 const SearchItem: React.FC<Props> = ({name, username, avater}) => {
+  const containerClass = 'lg:min-h-[9.13vw]';
+  const imgClass = 'lg:max-w-[15.20vw] lg:max-h-[10.13vw] lg:h-[9.13vw]';
+  const imgMobileClass = 'h-[27.42vh]';
   return (
-    <div className="flex flex-col w-full min-h-[9.13vw]">
+    <div
+      className={`flex flex-col w-full ${containerClass}`}
+    >
       <img
-        className="max-w-[15.20vw] max-h-[10.13vw] min-h-[9.13vw] w-full"
+        className={`w-full h-full ${imgClass} ${imgMobileClass}`}
         src={avater}
         alt="no imagwe"
       ></img>
-      <h1 className="text-[0.93125rem] leading-[150% tracking-[0.139688px] mt-3 text-white">
+      <h1
+        className="text-[0.93125rem] leading-[150% tracking-[0.139688px]
+       mt-5 lg:mt-3 text-white"
+      >
         {name}
       </h1>
       <span
