@@ -78,7 +78,11 @@ const Search = () => {
       </div>
     );
   };
-  return <>{renderDesktop()}
-  {renderMobile()}</>;
+  return (
+    <>
+      {renderDesktop()}
+      {renderMobile()}
+    </>
+  );
 };
 export default Search;
