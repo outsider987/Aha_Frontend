@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useCallback, useEffect, useRef} from 'react';
 import {useNavigate} from 'react-router-dom';
 import SvgICon from '~/components/SvgIcon';
 import TagItem from '~/components/TagItem';
@@ -31,7 +31,10 @@ const Search = () => {
         </div>
 
         <div className=" max-h-[83.44vh] overflow-auto mr-[21px]">
-          <div className="grid grid-cols-5 gap-y-9 max-w-[58.75vw] m-auto items-start min ">
+          <div
+            className="grid grid-cols-5 gap-y-9 max-w-[58.75vw]
+           m-auto items-start min "
+          >
             {stateTag.tagItem.map((item) => (
               <TagItem
                 key={item.id}
@@ -69,7 +72,10 @@ const Search = () => {
           <span className=" text-2xl text-white leading-[150%] mb-6">
             Results
           </span>
-          <div className="mr-[2.13vw] grid grid-cols-2 gap-y-6">
+          <div
+            className="mr-[2.13vw] grid
+          grid-cols-2 gap-y-6"
+          >
             {stateTag.tagItem.map((item) => (
               <TagItem key={item.id} name={item.name} count={item.count} />
             ))}

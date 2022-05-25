@@ -7,7 +7,31 @@ interface Props {
   avater: string;
   isFollowing?: false;
 }
+// const bottomBoundaryRef = useRef(null);
 
+// useEffect(() => {
+//   console.log(bottomBoundaryRef.current);
+// if (bottomBoundaryRef.current) {
+//   scrollObserver(bottomBoundaryRef.current);
+// }
+// }, [scrollObserver, bottomBoundaryRef]);
+// const scrollObserver = useCallback(
+//     (node: HTMLDivElement) => {
+//       new IntersectionObserver((entries) => {
+//         entries.forEach((en) => {
+//             console.log(en);
+//           if (en ) {
+//             actionsSearch.getSearchResult(
+//                 page,
+//                 searchState.pageSize,
+//                 searchState.keyword,
+//             );
+//           }
+//         });
+//       }).observe(node);
+//     },
+//     [ ],
+// );
 const SearchItem: React.FC<Props> = ({name, username, avater}) => {
   const containerClass = 'lg:min-h-[9.13vw]';
   const imgClass = 'lg:max-w-[15.20vw] lg:max-h-[10.13vw] lg:h-[9.13vw]';

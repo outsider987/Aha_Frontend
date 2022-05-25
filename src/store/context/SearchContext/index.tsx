@@ -16,12 +16,17 @@ export interface SearchState {
   searchItem: SearchItem[];
   page: number;
   pageSize: number;
+  total: number;
   keyword: string;
 }
 interface InterSearchContext {
   state: SearchState;
   actions: {
-    getSearchResult: (page: number, pageSize: number, keyword: string) => void;
+    getSearchResult: (
+      page: number,
+      pageSize: number,
+      keyword: string
+    ) => Promise<SearchItem[]>;
     setStateSearch: (p: SearchState) => void;
   };
 }
@@ -39,10 +44,15 @@ const contextDefaultValues: InterSearchContext = {
     ],
     page: 1,
     pageSize: 9,
+    total: 0,
     keyword: '',
   },
   actions: {
-    getSearchResult: (page: number, pageSize: number, keyword: string) => {},
+    getSearchResult: async (
+        page: number,
+        pageSize: number,
+        keyword: string,
+    ) => [],
     setStateSearch: (p: SearchState) => {},
   },
 };
@@ -59,17 +69,17 @@ const SearchProvider: React.FC<Props> = ({children}) => {
       pageSize: number,
       keyword: string,
   ) => {
-    const data = (await (
-      await GET_SEARCH(page, pageSize, keyword)
-    ).data) as SearchItem[];
-
+    const resp = await await GET_SEARCH(page, pageSize, keyword);
+    const data = (await resp.data) as SearchItem[];
     await setState({
       ...stateSearch,
       state: {
         ...stateSearch.state,
         searchItem: data,
+        total: resp.total,
       },
     });
+    return await data;
   };
 
   const setStateSearch = (currentState: SearchState) => {
