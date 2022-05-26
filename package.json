@@ -22,6 +22,7 @@
     "homepage": "https://github.com/outsider987/Aha_Frontend#readme",
     "dependencies": {
         "axios": "^0.27.2",
+        "express": "^4.18.1",
         "prettier": "^2.6.2"
     },
     "devDependencies": {
