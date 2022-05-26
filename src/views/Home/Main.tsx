@@ -29,7 +29,7 @@ const Main = () => {
   }, [sliderValue, searchValue]);
 
   const Row1 = () => {
-    const lineDektopClass = 'lg:bg-white lg:bg-opacity-10 lg:my-[3.3vh]';
+    const lineDektopClass = 'lg:bg-white lg:bg-opacity-10 lg:my-[3.33vh]';
     const lineMobileClass = 'my-[1.72vh]';
     return (
       <div className="flex flex-col">
@@ -40,6 +40,7 @@ const Main = () => {
           Search
         </span>
         <Input
+        inputClassName='max-h-[6.66vh]'
           type="text"
           value={searchValue}
           setInput={setSearchInput}
@@ -58,7 +59,7 @@ const Main = () => {
     return (
       <div className="flex flex-col">
         <span
-          className="flex text-white text-2xl lg:mb-[2.2vh]
+          className="flex text-white text-2xl lg:mb-[2.22vh]
         mb-[1.97vh] leading-[150%]"
         >
           # Of Results Per Page
@@ -67,8 +68,8 @@ const Main = () => {
           className="flex flex-row tracking-[0.15px]
         text-white space-x-[0.625rem] items-baseline"
         >
-          <span className=" font-bold text-5xl">{sliderValue}</span>
-          <span>results</span>
+          <span className=" font-bold text-5xl leading-[150%]">{sliderValue}</span>
+          <span className='ml-[0.625rem] tracking-[0.15px] leading-[150%]'>results</span>
         </div>
         <Slider
           value={sliderValue}
@@ -76,11 +77,11 @@ const Main = () => {
           min={3}
           max={50}
           step={3}
-          className=" mt-6 mb-[2.125rem]"
+          className=" mt-6 mb-[1.875rem]"
         />
         <div
           className={`w-full h-[1px] bg-white bg-opacity-10 
-          lg:my-[3.3vh] hidden lg:flex`}
+          lg:my-[3.33vh] hidden lg:flex`}
         />
       </div>
     );

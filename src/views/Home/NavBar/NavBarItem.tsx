@@ -29,20 +29,20 @@ const NavBarItem: React.FC<Props> = ({
       <SvgICon
         name={iconName}
         className={`justify-center relative ${
-          isFocus ? 'text-white' : 'text-gray-600'
+          isFocus ? 'text-white' : 'text-[#6A6A6A]'
         }`}
       >
         {!isFocus && (
           <div
-            className="absolute  -right-[16.6%] -top-[20.83%] w-[25%] h-[25%]
+            className="absolute  -right-[16.6%] -top-[20.83%] w-[22%] h-[22%]
         bg-navBarUnFocusBlue rounded-full"
           />
         )}
       </SvgICon>
 
       <span
-        className="min-h-[2vh] tracking-[0.1em] text-xs text-center
-       text-white"
+        className="min-h-[18px] tracking-[0.4px] text-xs text-center
+        leading-[150%] text-white"
       >
         {isFocus && text}
       </span>

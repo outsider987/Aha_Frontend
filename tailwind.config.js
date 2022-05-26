@@ -12,10 +12,10 @@ module.exports = {
         slider_bar_r: '#FFD25F',
       },
       spacing: {
-        navbar_desktop_w: '5.7vw',
+        navbar_desktop_w: '5.5vw',
       },
       maxWidth: {
-        navbar_desktop_w: '5.7vw',
+        navbar_desktop_w: '5.5vw',
       },
       screens: {
         follower: '1440px',
