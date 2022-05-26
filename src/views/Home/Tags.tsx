@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useRef} from 'react';
+import React, {useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
 import SvgICon from '~/components/SvgIcon';
 import TagItem from '~/components/TagItem';
