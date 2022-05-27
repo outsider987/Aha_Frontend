@@ -82,7 +82,7 @@ const Slider: React.FC<Props> = ({
         onInput={onSliderInputChange}
       />
 
-      <ul className="flex w-full relative  mt-4">
+      <ul className="flex w-full relative  mt-[0.875rem]">
         {countList.map((item, index) => (
           <li
             key={index}

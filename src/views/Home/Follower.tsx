@@ -32,7 +32,7 @@ const Follower = () => {
             onClick={(e) => onMenuClick(index)}
             key={index}
             className={`tracking-[0.15px] cursor-pointer text-base 
-            pt-[3.55vh] pb-[1.44vh]
+            pt-8 pb-[0.8125rem]
           font-bold leading-[150%] text-white w-full text-center border-b-2
            border-white border-solid ${
           menuIndexState !== index && disableClass

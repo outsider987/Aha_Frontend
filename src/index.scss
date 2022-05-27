@@ -5,14 +5,12 @@
 
 @layer components {
   .content_container {
-    @apply md:m-auto ;
+    @apply md:m-auto;
     @apply lg:ml-[9.09vw] lg:mt-[6vh] lg:mb-[9.6vh] w-full  lg:max-w-[50.34vw];
-    
   }
   .content_tags_container {
-    @apply md:m-auto ;
-    @apply lg:pt-[6vh] w-full max-h-screen ;
-    
+    @apply md:m-auto;
+    @apply lg:pt-[6vh] w-full max-h-screen;
   }
   .slide_group {
     input[type='range'] {
@@ -24,7 +22,7 @@
     }
     input[type='range']::-webkit-slider-thumb {
       @apply appearance-none w-[1px] h-[1px] z-40  bg-greyscale relative rounded-full;
-      border: 6px solid #181818;
+      border: 7.5px solid #181818;
       outline: 6px solid #ffd25f;
       cursor: pointer;
     }
@@ -38,10 +36,10 @@
   }
 }
 
-.navbar_mobile{
-    background: rgba(24, 24, 24, 0.2);
-box-shadow: inset 0px 0.5px 0px rgba(0, 0, 0, 0.8);
-backdrop-filter: blur(54.3656px);
+.navbar_mobile {
+  background: rgba(24, 24, 24, 0.2);
+  box-shadow: inset 0px 0.5px 0px rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(54.3656px);
 }
 
 .modal-mount {
@@ -63,21 +61,20 @@ backdrop-filter: blur(54.3656px);
   animation: unmount 0.5s ease-in-out;
 }
 
-
 ::-webkit-scrollbar {
-    width: 5px;
+  width: 5px;
 }
 ::-webkit-scrollbar-track {
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    margin: 0px 0px 5px 0;
-    background: transparent;
-    border-radius: 10px;
-    // padding-right: 6.61px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  margin: 0px 0px 5px 0;
+  background: transparent;
+  border-radius: 10px;
+  // padding-right: 6.61px;
 }
 ::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    border-radius: 4px;
-    background: rgba(255, 255, 255, 0.2);
-    background-clip: padding-box;
+  border-radius: 10px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  background-clip: padding-box;
 }

@@ -16,11 +16,11 @@ const Input: React.FC<Props> = (props: Props) => {
       {props.label != undefined && <span className="flex">{props.label}</span>}
       <input
         className={`w-auto focus:outline-none focus:border-inputFcous 
-            focus:opacity-100
+            focus:opacity-100 tracking-[0.25px] placeholder:opacity-30
           bg-greyscale border-[3px] border-solid 
           border-white border-opacity-50  
            rounded-md  py-5 px-[1.125rem]
-           opacity-30 text-white
+           text-white
             text-sm
           ${props.inputClassName}`}
         type={props.type}

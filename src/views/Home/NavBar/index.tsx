@@ -1,7 +1,7 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import {useLocation} from 'react-router-dom';
 import SvgICon from '~/components/SvgIcon';
-import { routes } from '~/router';
+import {routes} from '~/router';
 import NavBarItem from './NavBarItem';
 
 const NavBar = () => {
@@ -11,7 +11,7 @@ const NavBar = () => {
       className="w-full min-h-screen bg-navbar
       max-w-navbar_desktop_w hidden lg:block relative "
     >
-        <div className='w-[1px] absolute -right-[1px] bg-black bg-opacity-20'/>
+      <div className="w-[1px] absolute -right-[1px] bg-black bg-opacity-20" />
       {/* desktop */}
       <div className="px-[1.66vw] py-[37px]">
         <div className="mb-[5vh]">
@@ -19,7 +19,7 @@ const NavBar = () => {
         </div>
 
         <div
-          className="hidden lg:flex flex-col 
+          className="hidden lg:flex flex-col
       space-y-6 items-center"
         >
           {mainRoutes.children.map((item) => (

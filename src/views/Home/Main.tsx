@@ -40,7 +40,7 @@ const Main = () => {
           Search
         </span>
         <Input
-        inputClassName='max-h-[6.66vh]'
+          inputClassName="max-h-[6.66vh]"
           type="text"
           value={searchValue}
           setInput={setSearchInput}
@@ -60,16 +60,15 @@ const Main = () => {
       <div className="flex flex-col">
         <span
           className="flex text-white text-2xl lg:mb-[2.22vh]
-        mb-[1.97vh] leading-[150%]"
+        mb-[0.8rem] leading-[150%]"
         >
           # Of Results Per Page
         </span>
-        <div
-          className="flex flex-row tracking-[0.15px]
-        text-white space-x-[0.625rem] items-baseline"
-        >
-          <span className=" font-bold text-5xl leading-[150%]">{sliderValue}</span>
-          <span className='ml-[0.625rem] tracking-[0.15px] leading-[150%]'>results</span>
+        <div className=" flex flex-row items-end text-white space-x-[0.625rem] ">
+          <span className=" font-bold text-5xl ">{sliderValue}</span>
+          <span className="flex leading-[150%] pb-[0.1875rem] text-base tracking-[0.15px]">
+            results
+          </span>
         </div>
         <Slider
           value={sliderValue}
@@ -77,7 +76,7 @@ const Main = () => {
           min={3}
           max={50}
           step={3}
-          className=" mt-6 mb-[1.875rem]"
+          className=" mt-[1.6875rem] mb-[2.25rem] leading-[150%] h-2"
         />
         <div
           className={`w-full h-[1px] bg-white bg-opacity-10 
@@ -95,7 +94,11 @@ const Main = () => {
           {Row2()}
         </div>
 
-        <Button onClick={onSearchClick} className="w-[23.82vw]">
+        <Button
+          onClick={onSearchClick}
+          className="w-[23.82vw] min-h-[2.5rem]
+         text-sm py-[0.8125rem] px-4 leading-[100%] text-center"
+        >
           SEARCH
         </Button>
       </div>

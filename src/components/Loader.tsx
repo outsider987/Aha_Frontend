@@ -18,9 +18,14 @@ const Loader = forwardRef<HTMLDivElement, Props>((props, ref) => {
       </div>
     );
   } else if (props.isEnd) {
-    return <div className=' text-white'> End</div>;
+    return <div className=" text-white"> End</div>;
   } else {
-    return <div className=' text-white' ref={ref}> loading</div>;
+    return (
+      <div className=" text-white" ref={ref}>
+        {' '}
+        loading
+      </div>
+    );
   }
 });
 export default Loader;
