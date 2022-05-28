@@ -86,7 +86,7 @@ const Slider: React.FC<Props> = ({
         {countList.map((item, index) => (
           <li
             key={index}
-            className={`flex left-0 right-0 h-auto justify-start 
+            className={`flex left-0 right-0 h-auto justify-start leading-[150%]
              w-1 pr-[18.31%] 
              ${index === countList.length - 2 && ' pr-[24.97%]'} `}
           >

@@ -29,18 +29,18 @@ const Main = () => {
   }, [sliderValue, searchValue]);
 
   const Row1 = () => {
-    const lineDektopClass = 'lg:bg-white lg:bg-opacity-10 lg:my-[3.33vh]';
+    const lineDektopClass = 'lg:bg-white lg:bg-opacity-10 lg:my-[1.875rem]';
     const lineMobileClass = 'my-[1.72vh]';
     return (
       <div className="flex flex-col">
         <span
           className="flex text-white text-2xl mb-[1.97vh]
-         lg:mb-[2.2vh] leading-[150%]"
+         lg:mb-5 leading-[150%]"
         >
           Search
         </span>
         <Input
-          inputClassName="max-h-[6.66vh]"
+          inputClassName="max-h-[6.66vh] min-h-[3.75rem]"
           type="text"
           value={searchValue}
           setInput={setSearchInput}
@@ -59,14 +59,16 @@ const Main = () => {
     return (
       <div className="flex flex-col">
         <span
-          className="flex text-white text-2xl lg:mb-[2.22vh]
-        mb-[0.8rem] leading-[150%]"
+          className="flex text-white text-2xl lg:mb-5
+        mb-4 leading-[150%]"
         >
           # Of Results Per Page
         </span>
-        <div className=" flex flex-row items-end text-white space-x-[0.625rem] ">
+        <div className=" flex flex-row items-end text-white space-x-[0.625rem]
+        min-h-[3.125rem]">
           <span className=" font-bold text-5xl ">{sliderValue}</span>
-          <span className="flex leading-[150%] pb-[0.1875rem] text-base tracking-[0.15px]">
+          <span className="flex leading-[150%] pb-1 text-base
+           tracking-[0.15px]">
             results
           </span>
         </div>
@@ -76,11 +78,11 @@ const Main = () => {
           min={3}
           max={50}
           step={3}
-          className=" mt-[1.6875rem] mb-[2.25rem] leading-[150%] h-2"
+          className=" mt-[1.625rem] mb-[2.25rem] h-2"
         />
         <div
           className={`w-full h-[1px] bg-white bg-opacity-10 
-          lg:my-[3.33vh] hidden lg:flex`}
+          lg:my-[1.875rem] hidden lg:flex`}
         />
       </div>
     );
@@ -96,7 +98,7 @@ const Main = () => {
 
         <Button
           onClick={onSearchClick}
-          className="w-[23.82vw] min-h-[2.5rem]
+          className="w-[23.82vw] min-h-[2.5rem] max-h-10
          text-sm py-[0.8125rem] px-4 leading-[100%] text-center"
         >
           SEARCH
@@ -116,18 +118,19 @@ const Main = () => {
           className="flex h-full max-h-screen flex-col
          w-full justify-between px-5"
         >
-          <div className="w-full ">
-            <div className="py-[3.44vh] flex lg:hidden">
+          <div className="w-full flex flex-col">
+            <div className="pt-7 pb-[1.6875rem] flex lg:hidden min-h-[70px]">
               <img src={require('../../assets/svg/LOGO.svg')} />
             </div>
             {Row1()}
             {Row2()}
           </div>
           <div
-            className="mb-[2.95vh] min-h-[17.73vh] w-full flex items-end
+            className="mb-[2.95vh] min-h-[25.86vh] w-full flex items-end
           border-t border-solid border-white border-opacity-10"
           >
-            <Button onClick={onSearchClick} className="w-full">
+            <Button onClick={onSearchClick} className="w-full max-h-10 text-sm 
+            leading-[100%]">
               SEARCH
             </Button>
           </div>

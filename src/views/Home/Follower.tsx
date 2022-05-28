@@ -26,7 +26,7 @@ const Follower = () => {
   const renderMenu = () => {
     const disableClass = 'text-[#929292] text-opacity-[0.87] bg-[#1F1F1F]';
     return (
-      <div className="flex flex-row w-full ">
+      <div className="flex flex-row w-full max-h-[4.0625rem]">
         {menu.map((item, index) => (
           <span
             onClick={(e) => onMenuClick(index)}
