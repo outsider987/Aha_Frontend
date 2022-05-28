@@ -17,7 +17,7 @@ const Search = () => {
   const renderDesktop = () => {
     return (
       <div className="hidden lg:flex flex-col w-full">
-        <div className="mr-[21px] mb-6">
+        <div className="mx-[21px] mb-6">
           <div className="relative m-auto max-w-[58.75vw] w-full">
             <SvgICon
               onClick={onBack}
@@ -30,9 +30,9 @@ const Search = () => {
           </div>
         </div>
 
-        <div className=" max-h-[83.44vh] overflow-auto mr-[21px]">
+        <div className=" max-h-[83.44vh] overflow-auto mx-[21px]">
           <div
-            className="grid grid-cols-5 gap-y-9 max-w-[58.75vw]
+            className="grid grid-cols-5 gap-y-9 gap-x-6 max-w-[846px]
            m-auto items-start min "
           >
             {stateTag.tagItem.map((item) => (
@@ -84,6 +84,7 @@ const Search = () => {
       </div>
     );
   };
+  
   return (
     <>
       {renderDesktop()}

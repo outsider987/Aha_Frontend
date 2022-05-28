@@ -24,7 +24,7 @@ const Follower = () => {
   };
 
   const renderMenu = () => {
-    const disableClass = 'text-[#929292] opacity-[0.87] border-greyscale';
+    const disableClass = 'text-[#929292] text-opacity-[0.87] bg-[#1F1F1F]';
     return (
       <div className="flex flex-row w-full ">
         {menu.map((item, index) => (
@@ -32,13 +32,13 @@ const Follower = () => {
             onClick={(e) => onMenuClick(index)}
             key={index}
             className={`tracking-[0.15px] cursor-pointer text-base 
-            pt-8 pb-[0.8125rem]
-          font-bold leading-[150%] text-white w-full text-center border-b-2
-           border-white border-solid ${
-          menuIndexState !== index && disableClass
-          }`}
+            pt-8 pb-[0.6875rem] relative
+          font-bold leading-[150%] text-white w-full text-center  `}
           >
             {item}
+            <div className={`w-full h-[2px] absolute bottom-0 
+            bg-white max-h-[4.0625rem] 
+            ${menuIndexState !== index && disableClass}`}/>
           </span>
         ))}
       </div>

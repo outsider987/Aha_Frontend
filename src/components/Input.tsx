@@ -17,9 +17,9 @@ const Input: React.FC<Props> = (props: Props) => {
       <input
         className={`w-auto focus:outline-none focus:border-inputFcous 
             focus:opacity-100 tracking-[0.25px] placeholder:opacity-30
-          bg-greyscale border-[3px] border-solid 
+          bg-greyscale border-[3px] border-solid leading-[150%]
           border-white border-opacity-50  
-           rounded-md  py-5 px-[1.125rem]
+           rounded-md pt-5 pb-[19px] px-[0.9375rem]
            text-white
             text-sm
           ${props.inputClassName}`}

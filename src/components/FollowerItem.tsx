@@ -23,10 +23,12 @@ const FollowerItem: React.FC<Props> = ({
           border-solid border-[#F8F8F8] rounded-md "
         />
         <div className=" flex flex-col min-h-[45px] justify-between">
-          <span className="text-base text-white tracking-[0.15px] whitespace-nowrap">
+          <span className="text-base text-white tracking-[0.15px] 
+          whitespace-nowrap">
             {name}
           </span>
-          <span className="text-white text-opacity-50 tracking-[0.25px]">
+          <span className="text-white text-opacity-50 tracking-[0.25px] 
+          text-sm">
             @{username}
           </span>
         </div>
