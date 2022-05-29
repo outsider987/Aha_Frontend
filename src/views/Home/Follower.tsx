@@ -36,9 +36,11 @@ const Follower = () => {
           font-bold leading-[150%] text-white w-full text-center  `}
           >
             {item}
-            <div className={`w-full h-[2px] absolute bottom-0 
+            <div
+              className={`w-full h-[2px] absolute bottom-0 
             bg-white max-h-[4.0625rem] 
-            ${menuIndexState !== index && disableClass}`}/>
+            ${menuIndexState !== index && disableClass}`}
+            />
           </span>
         ))}
       </div>

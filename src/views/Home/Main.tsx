@@ -157,9 +157,7 @@ const Main = () => {
 
   return (
     <>
-      {/* desktop */}
       {renderDesktop()}
-      {/* mobile */}
       {renderMobile()}
     </>
   );

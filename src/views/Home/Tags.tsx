@@ -1,5 +1,8 @@
 import React, {useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
+import MBackPage from '~/components/MBackPage';
+import MContainer from '~/components/MContainer';
+import MWrapper from '~/components/MWrapper';
 import SvgICon from '~/components/SvgIcon';
 import TagItem from '~/components/TagItem';
 import {useContextTags} from '~/store/context/TagContext';
@@ -11,13 +14,14 @@ const Search = () => {
   const onBack = () => {
     navigate(-1);
   };
+
   useEffect(() => {
     tagsAction.getTags();
   }, []);
   const renderDesktop = () => {
     return (
-      <div className="hidden lg:flex flex-col w-full">
-        <div className="mx-[21px] mb-6">
+      <div className="hidden lg:flex flex-col w-full max-h-[90.44vh]">
+        <div className="mx-[1.3125rem] ">
           <div className="relative m-auto max-w-[58.75vw] w-full">
             <SvgICon
               onClick={onBack}
@@ -26,11 +30,14 @@ const Search = () => {
             top-0 bottom-0 cursor-pointer
             items-center text-white"
             />
-            <span className="text-3xl tracking-[0.25px] text-white">Tags</span>
+            <span className="flex h-full text-3xl tracking-[0.25px] leading-[150%]
+             text-white">
+                 Tags
+                 </span>
           </div>
         </div>
 
-        <div className=" max-h-[83.44vh] overflow-auto mx-[21px]">
+        <div className=" max-h-[83.44vh] overflow-auto mx-[21px] mt-6">
           <div
             className="grid grid-cols-5 gap-y-9 gap-x-6 max-w-[846px]
            m-auto items-start min "
@@ -49,42 +56,18 @@ const Search = () => {
   };
   const renderMobile = () => {
     return (
-      <div
-        className="lg:hidden flex flex-col ml-[5.33vw] mr-[1.86vw]
-      relative "
-      >
-        <div
-          className=" text-3xl text-white flex flex-row space-x-[2.44vh]
-         leading-[150%] tracking-[0.25px]  py-[2.09vh] relative"
-        >
-          <SvgICon
-            onClick={onBack}
-            name="arrow"
-            className="flex cursor-pointer
-            items-center text-white"
-          />
-          <span>Home page</span>
-        </div>
-        <div
-          className="flex flex-col justify-between
-         overflow-auto max-h-[81.77vh] "
-        >
-          <span className=" text-2xl text-white leading-[150%] mb-6">
-            Results
-          </span>
-          <div
-            className="mr-[2.13vw] grid
-          grid-cols-2 gap-y-6"
-          >
-            {stateTag.tagItem.map((item) => (
-              <TagItem key={item.id} name={item.name} count={item.count} />
-            ))}
-          </div>
-        </div>
-      </div>
+      <MContainer>
+        <MBackPage>Tags</MBackPage>
+        <MWrapper contentClassName="grid grid-cols-2 gap-y-6 gap-x-6 
+        ml-[0.3125rem] ">
+          {stateTag.tagItem.map((item) => (
+            <TagItem key={item.id} name={item.name} count={item.count} />
+          ))}
+        </MWrapper>
+      </MContainer>
     );
   };
-  
+
   return (
     <>
       {renderDesktop()}

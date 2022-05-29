@@ -2,6 +2,9 @@ import React, {useCallback, useEffect, useRef, useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import Button from '~/components/Button';
 import Loader from '~/components/Loader';
+import MBackPage from '~/components/MBackPage';
+import MContainer from '~/components/MContainer';
+import MWrapper from '~/components/MWrapper';
 import SearchItem from '~/components/SearchItem';
 import SvgICon from '~/components/SvgIcon';
 import {useContextGlobal} from '~/store/context/global';
@@ -129,59 +132,37 @@ const Search = () => {
   };
   const renderMobile = () => {
     return (
-      <div
-        className="lg:hidden flex flex-col ml-[5.33vw] mr-[1.86vw]
-      relative "
-      >
-        <div
-          className=" text-3xl text-white flex flex-row space-x-[2.44vh]
-         leading-[150%] tracking-[0.25px]  py-[2.09vh] relative"
-        >
-          <SvgICon
-            onClick={onBack}
-            name="arrow"
-            className="flex cursor-pointer
-            items-center text-white"
-          />
-          <span>Home page</span>
-        </div>
-        <div
-          className="flex flex-col justify-between
-         overflow-auto max-h-[81.77vh] "
-        >
-          <span className=" text-2xl text-white leading-[150%] mb-6">
-            Results
-          </span>
-          <div className="mr-[2.13vw] space-y-[4.92vh]">
-            {searchState.searchItem.map((item, index) => {
-              if (searchState.searchItem.length === index + 1) {
-                return (
-                  <SearchItem
-                    key={item.id}
-                    name={item.name}
-                    username={item.username}
-                    avater={item.avater}
-                  />
-                );
-              } else {
-                return (
-                  <SearchItem
-                    key={item.id}
-                    name={item.name}
-                    username={item.username}
-                    avater={item.avater}
-                  />
-                );
-              }
-            })}
-            <Loader
-              isEnd={searchState.total < page.pageSize}
-              isload={globalState.isloading}
-              ref={moblieLoader}
-            ></Loader>
-          </div>
-        </div>
-      </div>
+      <MContainer>
+        <MBackPage>Results</MBackPage>
+        <MWrapper contentClassName=' space-y-10'>
+          {searchState.searchItem.map((item, index) => {
+            if (searchState.searchItem.length === index + 1) {
+              return (
+                <SearchItem
+                  key={item.id}
+                  name={item.name}
+                  username={item.username}
+                  avater={item.avater}
+                />
+              );
+            } else {
+              return (
+                <SearchItem
+                  key={item.id}
+                  name={item.name}
+                  username={item.username}
+                  avater={item.avater}
+                />
+              );
+            }
+          })}
+          <Loader
+            isEnd={searchState.total < page.pageSize}
+            isload={globalState.isloading}
+            ref={moblieLoader}
+          ></Loader>
+        </MWrapper>
+      </MContainer>
     );
   };
   return (

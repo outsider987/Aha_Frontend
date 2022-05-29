@@ -23,7 +23,7 @@ const NavBarItem: React.FC<Props> = ({
   return (
     <Link
       to={path}
-      className="flex flex-col justify-center relative 
+      className="flex flex-col justify-center relative
     items-center"
     >
       <SvgICon

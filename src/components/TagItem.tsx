@@ -7,21 +7,18 @@ interface Props {
 }
 
 const TagItem: React.FC<Props> = ({name, count}) => {
-  const containerClass = `lg:max-w-[9.375rem] lg:max-h-[12.4375rem] 
-  lg:min-h-[9.375rem]`;
-  const containerMobileGroupClass = `max-w-[18.47vh] min-h-[18.47vh] `;
-  const imageGroupClass = `lg:max-w-[9.375rem] lg:max-h-[9.375rem] 
-    lg:min-h-[9.375rem]`;
-  const imageMobileGroupClass = `max-w-[18.47vh]
-     max-h-[18.47vh] min-h-[18.47vh]`;
+  const containerClass = `max-w-[9.375rem] max-h-[12.4375rem] 
+  min-h-[9.375rem] min-w-[9.375rem]`;
+  const imageGroupClass = `max-w-[9.375rem] max-h-[9.375rem] 
+    min-h-[9.375rem] min-w-[9.375rem]`;
+
   return (
     <div
-      className={`flex flex-col w-full ${containerClass} 
-    ${containerMobileGroupClass}`}
+      className={`flex flex-col w-full ${containerClass} `}
     >
       <div
         className={`relative w-full bg-[#262626] rounded-[10px] 
-        ${imageGroupClass} ${imageMobileGroupClass}`}
+        ${imageGroupClass}`}
       >
         <div
           className="text-2xl border-4 border-solid left-[0.625rem] px-[0.875rem]
@@ -33,7 +30,7 @@ const TagItem: React.FC<Props> = ({name, count}) => {
       </div>
       <h1
         className="text-[0.93125rem] leading-[150%] truncate
-        tracking-[0.139688px] mt-[0.875rem] text-white"
+        tracking-[0.139688px] mt-[0.625rem] text-white"
       >
         {name}
       </h1>
