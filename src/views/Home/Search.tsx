@@ -90,9 +90,7 @@ const Search = () => {
   const renderDesktop = () => {
     return (
       <div className="hidden lg:flex flex-col ">
-        <div
-          className=" text-3xl text-white mb-6 relative "
-        >
+        <div className=" text-3xl text-white mb-6 relative ">
           <SvgICon
             onClick={onBack}
             name="arrow"
@@ -100,11 +98,13 @@ const Search = () => {
             top-0 bottom-0 cursor-pointer
             items-center text-white"
           />
-          <span className='flex  leading-[2.8125rem] ml-[0.375rem] 
+          <span
+            className="flex  leading-[2.8125rem] ml-[0.375rem]
           tracking-[0.25px]
-           '>
-              Results
-              </span>
+           "
+          >
+            Results
+          </span>
         </div>
         <div
           className=" grid grid-cols-3 justify-between gap-x-[2.125rem]
@@ -127,8 +127,11 @@ const Search = () => {
             ref={loader}
           ></Loader>
         </div>
-        <Button onClick={onMoreClick} className="w-[343px]
-        mt-[2.4375rem]">
+        <Button
+          onClick={onMoreClick}
+          className="w-[343px]
+        mt-[2.4375rem]"
+        >
           MORE
         </Button>
       </div>

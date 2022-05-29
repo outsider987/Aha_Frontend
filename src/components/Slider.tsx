@@ -41,7 +41,7 @@ const Slider: React.FC<Props> = ({
         max,
     );
     const limit = baseStep * (space + 1) + min;
-    if (inputValue >= limit) {
+    if (inputValue > limit) {
       setSliderValue(max);
       e.target.step = `1`;
     } else {
@@ -86,17 +86,18 @@ const Slider: React.FC<Props> = ({
         {countList.map((item, index) => (
           <li
             key={index}
-            className={`flex left-0 right-0 h-auto justify-start leading-[150%]
-             w-1 pr-[18.31%] 
-             ${index === countList.length - 2 && ' pr-[24.97%]'} `}
+            className={`flex left-0 right-0 leading-[150%]
+             pr-[18.75%] justify-center relative
+             ${index === 0 && '!justify-start'} 
+             ${index === countList.length - 2 && ' pr-[25%]'} 
+             ${index === countList.length - 1 && ' pr-[0%] !justify-end'} `}
           >
             <span
-              className={`text-base flex  absolute
+              className={`text-base flex  absolute 
              text-white 
              ${
                convertSliderValueToValue(
                    sliderValue,
-
                    space,
                    baseStep,
                    min,
@@ -137,13 +138,12 @@ function convertValueToBackGroundSize(
 /**
  * slider value have to convert to real input value
  * every step range percentage  is 18.75% and last step is 25%
- * and every li is 18.31%
  *@param {number} valueRange
  *@return {number}
  */
 function getStepValueBySliderPercentage(valueRange: number) {
   const result = valueRange * (18.75 / 100);
-  return result - 0.05;
+  return result;
 }
 /** slider value to value
  * slider max value take 25% then forward part is 75% and

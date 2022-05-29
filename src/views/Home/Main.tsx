@@ -144,7 +144,8 @@ const Main = () => {
         </div>
 
         <div
-          className="min-h-[8.12vh] navbar_mobile justify-center flex
+          className="min-h-[8.12vh] navbar_mobile
+          justify-center flex
          flex-row items-center space-x-[54.24px]"
         >
           {mainRoutes.children.map((item) => (
