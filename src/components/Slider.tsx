@@ -65,7 +65,7 @@ const Slider: React.FC<Props> = ({
     return {
       backgroundSize: `${Math.ceil(
           convertValueToBackGroundSize(sliderValue, min, max),
-      )}% `,
+      )}% 100%`,
     };
   };
   return (

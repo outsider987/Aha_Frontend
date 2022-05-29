@@ -21,9 +21,12 @@
       background-repeat: no-repeat;
     }
     input[type='range']::-webkit-slider-thumb {
-      @apply appearance-none w-[1px] h-[1px] z-40  bg-greyscale relative rounded-full;
-      border: 7.5px solid #181818;
-      outline: 6px solid #ffd25f;
+      @apply appearance-none w-[20px] h-[20px] z-40  bg-greyscale relative rounded-full;
+      width: 26px ;
+      height:26px ;
+      background:#181818;
+      border: 6px solid #ffd25f;
+      
       cursor: pointer;
     }
 
@@ -44,6 +47,7 @@
 
 .modal-mount {
   animation: mount 0.4s linear;
+  
 }
 
 @keyframes mount {
