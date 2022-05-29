@@ -134,7 +134,7 @@ const Search = () => {
     return (
       <MContainer>
         <MBackPage>Results</MBackPage>
-        <MWrapper contentClassName=' space-y-10'>
+        <MWrapper contentClassName=" space-y-10">
           {searchState.searchItem.map((item, index) => {
             if (searchState.searchItem.length === index + 1) {
               return (

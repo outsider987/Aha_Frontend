@@ -26,9 +26,7 @@ const MBackPage: React.FC<Props> = ({children}) => {
           className="flex cursor-pointer
       items-center text-white"
         />
-        <span className='leading-[150%] text-2xl'>
-            Home page
-            </span>
+        <span className="leading-[150%] text-2xl">Home page</span>
       </div>
       <span
         className=" text-2xl text-white leading-[150%] mb-6 mt-5

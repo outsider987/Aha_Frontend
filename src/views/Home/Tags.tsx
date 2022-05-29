@@ -30,10 +30,12 @@ const Search = () => {
             top-0 bottom-0 cursor-pointer
             items-center text-white"
             />
-            <span className="flex h-full text-3xl tracking-[0.25px] leading-[150%]
-             text-white">
-                 Tags
-                 </span>
+            <span
+              className="flex h-full text-3xl tracking-[0.25px] leading-[150%]
+             text-white"
+            >
+              Tags
+            </span>
           </div>
         </div>
 
@@ -58,8 +60,10 @@ const Search = () => {
     return (
       <MContainer>
         <MBackPage>Tags</MBackPage>
-        <MWrapper contentClassName="grid grid-cols-2 gap-y-6 gap-x-6 
-        ml-[0.3125rem] ">
+        <MWrapper
+          contentClassName="grid grid-cols-2 gap-y-6 gap-x-6
+        ml-[0.3125rem] "
+        >
           {stateTag.tagItem.map((item) => (
             <TagItem key={item.id} name={item.name} count={item.count} />
           ))}

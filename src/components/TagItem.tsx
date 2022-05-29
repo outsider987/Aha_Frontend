@@ -13,17 +13,16 @@ const TagItem: React.FC<Props> = ({name, count}) => {
     min-h-[9.375rem] min-w-[9.375rem]`;
 
   return (
-    <div
-      className={`flex flex-col w-full ${containerClass} `}
-    >
+    <div className={`flex flex-col w-full ${containerClass} `}>
       <div
         className={`relative w-full bg-[#262626] rounded-[10px] 
         ${imageGroupClass}`}
       >
         <div
-          className="text-2xl border-4 border-solid left-[0.625rem] px-[0.875rem]
-        bottom-[0.875rem] rounded-lg border-white absolute font-bold text-white
-        leading-[150%] truncate max-w-[13.88vh] py-[3px]"
+          className="text-2xl border-4 border-solid left-[0.625rem]
+          px-[0.875rem] text-white bottom-[0.875rem] rounded-lg
+          border-white absolute font-bold leading-[150%] truncate
+          max-w-[13.88vh] py-[3px]"
         >
           {name}
         </div>

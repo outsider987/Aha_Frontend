@@ -64,11 +64,15 @@ const Main = () => {
         >
           # Of Results Per Page
         </span>
-        <div className=" flex flex-row items-end text-white space-x-[0.625rem]
-        min-h-[3.125rem]">
+        <div
+          className=" flex flex-row items-end text-white space-x-[0.625rem]
+        min-h-[3.125rem]"
+        >
           <span className=" font-bold text-5xl ">{sliderValue}</span>
-          <span className="flex leading-[150%] pb-1 text-base
-           tracking-[0.15px]">
+          <span
+            className="flex leading-[150%] pb-1 text-base
+           tracking-[0.15px]"
+          >
             results
           </span>
         </div>
@@ -129,8 +133,11 @@ const Main = () => {
             className="mb-[2.95vh] min-h-[25.86vh] w-full flex items-end
           border-t border-solid border-white border-opacity-10"
           >
-            <Button onClick={onSearchClick} className="w-full max-h-10 text-sm 
-            leading-[100%]">
+            <Button
+              onClick={onSearchClick}
+              className="w-full max-h-10 text-sm
+            leading-[100%]"
+            >
               SEARCH
             </Button>
           </div>
