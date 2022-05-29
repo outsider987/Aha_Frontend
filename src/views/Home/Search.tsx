@@ -89,23 +89,26 @@ const Search = () => {
 
   const renderDesktop = () => {
     return (
-      <div className="hidden lg:flex flex-col">
+      <div className="hidden lg:flex flex-col ">
         <div
-          className=" text-3xl text-white
-         leading-[150%] tracking-[0.25px] space-y-6 mb-[2.26vh] relative"
+          className=" text-3xl text-white mb-6 relative "
         >
           <SvgICon
             onClick={onBack}
             name="arrow"
-            className="absolute flex -left-8
+            className="absolute flex -left-[3.1875rem]
             top-0 bottom-0 cursor-pointer
             items-center text-white"
           />
-          <span>Results</span>
+          <span className='flex  leading-[2.8125rem] ml-[0.375rem] 
+          tracking-[0.25px]
+           '>
+              Results
+              </span>
         </div>
         <div
-          className=" grid grid-cols-3 justify-between gap-x-[2vw]
-        gap-y-[1.75vw] overflow-auto max-h-[76.22vh]"
+          className=" grid grid-cols-3 justify-between gap-x-[2.125rem]
+        gap-y-[1.9375rem] overflow-auto max-h-[672px]"
         >
           {searchState.searchItem.map((item) => (
             <SearchItem
@@ -124,7 +127,8 @@ const Search = () => {
             ref={loader}
           ></Loader>
         </div>
-        <Button onClick={onMoreClick} className="w-[23.82vw] mt-[3.33vh]">
+        <Button onClick={onMoreClick} className="w-[343px]
+        mt-[2.4375rem]">
           MORE
         </Button>
       </div>

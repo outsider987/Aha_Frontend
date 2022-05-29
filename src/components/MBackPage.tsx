@@ -16,7 +16,7 @@ const MBackPage: React.FC<Props> = ({children}) => {
   return (
     <>
       <div
-        className="text-white flex flex-row space-x-[1.2425rem]
+        className="text-white flex flex-row space-x-[0.8225rem]
         ml-[0.34375rem]    py-[1.0625rem]
         relative"
       >

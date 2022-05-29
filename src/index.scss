@@ -6,7 +6,7 @@
 @layer components {
   .content_container {
     @apply md:m-auto;
-    @apply lg:ml-[9.09vw] lg:mt-[6vh] lg:mb-[9.6vh] w-full  lg:max-w-[50.34vw];
+    @apply lg:ml-[9.09vw] lg:mt-[6vh] lg:mb-[9.6vh] w-full  lg:max-w-[730px];
   }
   .content_tags_container {
     

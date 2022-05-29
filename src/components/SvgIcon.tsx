@@ -90,15 +90,15 @@ const SvgICon: React.FC<Props> = (props: Props) => {
       case 'arrow':
         return (
           <svg
-            width="14"
-            height="22"
-            viewBox="0 0 14 22"
+            width="26"
+            height="26"
+            viewBox="0 0 26 26"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M13.2702 2.10349L11.3333 0.166626L0.5 11L11.3333 21.8333L13.2702 19.8964L4.37374 11L13.2702 2.10349Z"
-              fill="currentColor"
+              d="M19.2702 4.10349L17.3333 2.16663L6.5 13L17.3333 23.8333L19.2702 21.8964L10.3737 13L19.2702 4.10349Z"
+              fill="white"
             />
           </svg>
         );
