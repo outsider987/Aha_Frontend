@@ -108,7 +108,7 @@ const Search = () => {
         </div>
         <div
           className=" grid grid-cols-3 justify-between gap-x-[2.125rem]
-        gap-y-[1.9375rem] overflow-auto max-h-[672px]"
+        gap-y-[1.9375rem] overflow-auto max-h-[74.66vh]"
         >
           {searchState.searchItem.map((item) => (
             <SearchItem
@@ -129,8 +129,7 @@ const Search = () => {
         </div>
         <Button
           onClick={onMoreClick}
-          className="w-[343px]
-        mt-[2.4375rem]"
+          className="w-[343px] mt-8"
         >
           MORE
         </Button>
