@@ -12,11 +12,15 @@ yarn dev
 https://desolate-brook-06243.herokuapp.com/
 ```
 
+[link](https://desolate-brook-06243.herokuapp.com/)
+
 ## figma compare:
 
 ```jsx
 https://www.figma.com/file/7pzGbh20i9LyxFqo1pyHtm/homeWork
 ```
+
+[link](https://www.figma.com/file/7pzGbh20i9LyxFqo1pyHtm/homeWork)
 
 ## Find bug:
 
@@ -42,7 +46,7 @@ https://www.figma.com/file/7pzGbh20i9LyxFqo1pyHtm/homeWork
 ## Introduce tech:
 
 - language: typescript
-- Css frame work: tailwndcss
+- Css frame work: tailwindcss
 - State manage : use context api to do similar redux toolkit constructure, in the team work I think redux more better
 - Svg modulize that you could change color and size
 - webpack to package
