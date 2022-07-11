@@ -19,7 +19,6 @@ const Search = () => {
   });
 
   const loader = useRef(null);
-  const moblieLoader = useRef(null);
   const laodMore = useCallback(
       (entries: IntersectionObserverEntry[]) => {
         if (globalState.isloading) {
@@ -57,6 +56,17 @@ const Search = () => {
       );
     }
   }, [page]);
+  const [width, setWindowWidth] = useState(0);
+  useEffect(() => {
+    updateDimensions();
+
+    window.addEventListener('resize', updateDimensions);
+    return () => window.removeEventListener('resize', updateDimensions);
+  }, []);
+  const updateDimensions = () => {
+    const width = window.innerWidth;
+    setWindowWidth(width);
+  };
 
   // desktop loader
   useEffect(() => {
@@ -72,20 +82,6 @@ const Search = () => {
       if (loader.current) observer.unobserve(loader.current);
     };
   }, [loader, laodMore]);
-  // mobile loader
-  useEffect(() => {
-    const options = {
-      root: null,
-      rootMargin: '0px 0px 0px 0px',
-    };
-    const observer = new IntersectionObserver(laodMore, options);
-    if (moblieLoader.current) {
-      observer.observe(moblieLoader.current);
-    }
-    return () => {
-      if (moblieLoader.current) observer.unobserve(moblieLoader.current);
-    };
-  }, [moblieLoader, laodMore]);
 
   const renderDesktop = () => {
     return (
@@ -127,10 +123,7 @@ const Search = () => {
             ref={loader}
           ></Loader>
         </div>
-        <Button
-          onClick={onMoreClick}
-          className="w-[343px] mt-8"
-        >
+        <Button onClick={onMoreClick} className="w-[343px] mt-8">
           MORE
         </Button>
       </div>
@@ -165,19 +158,12 @@ const Search = () => {
           <Loader
             isEnd={searchState.total < page.pageSize}
             isload={globalState.isloading}
-            ref={moblieLoader}
+            ref={loader}
           ></Loader>
         </MWrapper>
       </MContainer>
     );
   };
-  return (
-    <>
-      {/* desktop */}
-      {renderDesktop()}
-      {/* mobile */}
-      {renderMobile()}
-    </>
-  );
+  return <>{width > 1024 ? renderDesktop() : renderMobile()}</>;
 };
 export default Search;
